@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 407238}
   - component: {fileID: 6526572}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: collider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 454430}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,9 +91,9 @@ GameObject:
   - component: {fileID: 3353614}
   - component: {fileID: 5493420}
   - component: {fileID: 2372832}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Saya_Wakizashi
-  m_TagString: Untagged
+  m_TagString: Art
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 409520}
   - component: {fileID: 6568760}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: collider3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 446534}
   - component: {fileID: 6557480}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: collider4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

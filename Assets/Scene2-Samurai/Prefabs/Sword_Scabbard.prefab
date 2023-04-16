@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 415856}
   - component: {fileID: 3351206}
   - component: {fileID: 2317326}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Scabbard_Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 456752}
   - component: {fileID: 3306844}
   - component: {fileID: 2356380}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sword_Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,9 +175,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 425942}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sword_Scabbard
-  m_TagString: Untagged
+  m_TagString: Art
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

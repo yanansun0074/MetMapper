@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4404640975989192}
   - component: {fileID: 65957561556524352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Katana_LODC
-  m_TagString: Untagged
+  m_TagString: Art
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4416464905277248}
   - component: {fileID: 33374930141743774}
   - component: {fileID: 23542641306973632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Katana_LODC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
