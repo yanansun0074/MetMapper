@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 458518}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: _Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 478778}
   - component: {fileID: 6545400}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: collider3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,9 +91,9 @@ GameObject:
   - component: {fileID: 482358}
   - component: {fileID: 20533640}
   - component: {fileID: 5418476}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wakizashi_LOD
-  m_TagString: Untagged
+  m_TagString: Art
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,7 +165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 422174}
   - component: {fileID: 6555144}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: collider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 457450}
   - component: {fileID: 3304382}
   - component: {fileID: 2365800}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wakizashi_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 407648}
   - component: {fileID: 6539376}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: collider4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 427666}
   - component: {fileID: 6583192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: collider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 413374}
   - component: {fileID: 3379236}
   - component: {fileID: 2347402}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wakizashi_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

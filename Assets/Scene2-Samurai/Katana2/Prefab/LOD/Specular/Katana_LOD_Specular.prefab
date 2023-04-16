@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4537059503619100}
   - component: {fileID: 65786695249634920}
   - component: {fileID: 205351594702597678}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Katana_LOD_Specular
-  m_TagString: Untagged
+  m_TagString: Art
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4743103964148862}
   - component: {fileID: 33401706804810286}
   - component: {fileID: 23531366500890576}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Katana_LODC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 4868621307920798}
   - component: {fileID: 33879094326607294}
   - component: {fileID: 23698575614241988}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Katana_LODA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 4096272329914736}
   - component: {fileID: 33223533118279706}
   - component: {fileID: 23873677149036220}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Katana_LODB
   m_TagString: Untagged
   m_Icon: {fileID: 0}

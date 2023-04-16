@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4536513632111904}
   - component: {fileID: 65955473030945524}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Katana_LODA
-  m_TagString: Untagged
+  m_TagString: Art
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4469104948323940}
   - component: {fileID: 33546468787062696}
   - component: {fileID: 23343320720008540}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Katana_LODA
   m_TagString: Untagged
   m_Icon: {fileID: 0}

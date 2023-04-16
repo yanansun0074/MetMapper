@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4039159089678619803}
   - component: {fileID: 3118768769458966725}
   - component: {fileID: 6285752548914437523}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,9 +107,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7325213941696748882}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SwordGuard3
-  m_TagString: Untagged
+  m_TagString: Art
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
