@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 358797645325978891}
   - component: {fileID: 7728858117143712697}
-  - component: {fileID: 5670394790294476876}
+  - component: {fileID: 1043806501784911978}
   m_Layer: 8
   m_Name: Portraits28 1
   m_TagString: Art
@@ -60,7 +60,7 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &5670394790294476876
+--- !u!114 &1043806501784911978
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
