@@ -5,9 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/arms_armor.unity
     guid: bc20c7f406ec40e40b8addf3f65ad6db
+  - enabled: 1
+    path: Assets/Scenes/SamuraiSplendor.unity
+    guid: 7996a3c778a784e91aecb52cd6727a02
+  - enabled: 0
+    path: Assets/Scenes/ChineseCeramics.unity
+    guid: b4d28f63e1c9c4fab8cfe6c59f333cce
+  - enabled: 0
+    path: Assets/Scenes/Scene4-GreekSculptures.unity
+    guid: e94859d320d215042b90a1384f54a17f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260,
       type: 2}
