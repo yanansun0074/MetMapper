@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CustomLaserPointer : MonoBehaviour
 {
+    // Tutorial for raycasting in VR: https://www.youtube.com/watch?v=sPl1tPp7xt4
+    
     public static CustomLaserPointer instance;
     
     public Transform handTransform;
-    
+
     RaycastHit hit;
     
+    // create instance of laser pointer
     void Awake()
     {
         instance = this;
