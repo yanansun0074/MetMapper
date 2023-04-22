@@ -79,13 +79,14 @@ public class SelectionManager : MonoBehaviour
         // there must be a selected and spawned object to rotate
         if (selectedObject != null && spawnedObject != null)
         {
+            Vector3 position = spawnedObject.GetComponent<Renderer>().bounds.center;
             // if the thumbstick is being moved horizontally and the horizontal position is greater than the vertical position
             if (leftThumbstickHorizontal != 0 && Mathf.Abs(leftThumbstickHorizontal) > Mathf.Abs(leftThumbstickVertical))
             {
                 // rotate spawned object about y
                 float angle = Mathf.Atan(leftThumbstickHorizontal) * Mathf.Rad2Deg;
                 //spawnedObject.transform.rotation *= Quaternion.Euler(0f, -angle * Time.deltaTime * 5, 0f);
-                spawnedObject.transform.RotateAround(spawnedObject.transform.position, Vector3.up, -angle * Time.deltaTime * 5);
+                spawnedObject.transform.RotateAround(position, Vector3.up, -angle * Time.deltaTime * 5);
             }
             
             // if the thumbstick is being moved vertically and the vertical position is greater than the horizontal position
@@ -94,7 +95,7 @@ public class SelectionManager : MonoBehaviour
                 // rotate spawned object about x
                 float angle = Mathf.Atan(leftThumbstickVertical) * Mathf.Rad2Deg;
                 //spawnedObject.transform.rotation *= Quaternion.Euler(-angle * Time.deltaTime * 5, 0f, 0f);
-                spawnedObject.transform.RotateAround(spawnedObject.transform.position, Vector3.up, -angle * Time.deltaTime * 5);
+                spawnedObject.transform.RotateAround(position, Vector3.right, -angle * Time.deltaTime * 5);
             }
 
         }
@@ -133,15 +134,15 @@ public class SelectionManager : MonoBehaviour
         //ovrCameraRig = GameObject.Find("OVRCameraRig").GetComponent<OVRCameraRig>();
         //var position = ovrCameraRig.centerEyeAnchor.position;
         //spawnedObject = Instantiate(selectedObject, position + new Vector3(0,0,position.z * 1), selectedObject.transform.rotation);
-
-        var position = selectedObject.transform.position + new Vector3(2, 0, 5);
+        
+        Vector3 position = selectedObject.transform.position + new Vector3(0, 0, 5);
         spawnedObject = Instantiate(selectedObject, position, selectedObject.transform.rotation);
         
         // move the spawned object down by 2 units
         // might need to change this so that it is moved relative to the floor
         // so that it works well for all artpieces
-        //spawnedObject.transform.position += new Vector3(0, -2, 0);
-        raycastCanvas.transform.position = spawnedObject.transform.position + new Vector3(0, 0, 3);
+        spawnedObject.transform.position += new Vector3(2, 0, 0);
+        //raycastCanvas.transform.position = position + new Vector3(-2, 0, 0);
         
         // scale the object down so that the user can see it easily
         spawnedObject.transform.localScale = new Vector3(selectedObject.transform.localScale.x * 1.05f, selectedObject.transform.localScale.y * 1.05f, selectedObject.transform.localScale.z * 1.05f);

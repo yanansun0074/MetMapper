@@ -233,6 +233,16 @@ PrefabInstance:
       propertyPath: handTransform
       value: 
       objectReference: {fileID: 1707777735878596695}
+    - target: {fileID: 3186944277482196628, guid: 45cb0bb7129814a8e93af03c43f72911,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 19.29767
+      objectReference: {fileID: 0}
+    - target: {fileID: 3186944277482196628, guid: 45cb0bb7129814a8e93af03c43f72911,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.77
+      objectReference: {fileID: 0}
     - target: {fileID: 3291962814421852533, guid: 45cb0bb7129814a8e93af03c43f72911,
         type: 3}
       propertyPath: rayTransform
