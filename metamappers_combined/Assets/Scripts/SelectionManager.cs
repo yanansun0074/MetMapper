@@ -41,7 +41,7 @@ public class SelectionManager : MonoBehaviour
         raycastText = GameObject.FindGameObjectWithTag("RaycastText").GetComponent<TextMeshProUGUI>();
         
         // we want the canvas to be hidden at first, no selected object
-        //raycastCanvas.enabled = false;
+        raycastCanvas.enabled = false;
     }
 
     // Update is called once per frame
@@ -84,7 +84,8 @@ public class SelectionManager : MonoBehaviour
             {
                 // rotate spawned object about y
                 float angle = Mathf.Atan(leftThumbstickHorizontal) * Mathf.Rad2Deg;
-                spawnedObject.transform.rotation *= Quaternion.Euler(0f, -angle * Time.deltaTime * 5, 0f);
+                //spawnedObject.transform.rotation *= Quaternion.Euler(0f, -angle * Time.deltaTime * 5, 0f);
+                spawnedObject.transform.RotateAround(spawnedObject.transform.position, Vector3.up, -angle * Time.deltaTime * 5);
             }
             
             // if the thumbstick is being moved vertically and the vertical position is greater than the horizontal position
@@ -92,7 +93,8 @@ public class SelectionManager : MonoBehaviour
             {
                 // rotate spawned object about x
                 float angle = Mathf.Atan(leftThumbstickVertical) * Mathf.Rad2Deg;
-                spawnedObject.transform.rotation *= Quaternion.Euler(-angle * Time.deltaTime * 5, 0f, 0f);
+                //spawnedObject.transform.rotation *= Quaternion.Euler(-angle * Time.deltaTime * 5, 0f, 0f);
+                spawnedObject.transform.RotateAround(spawnedObject.transform.position, Vector3.up, -angle * Time.deltaTime * 5);
             }
 
         }
@@ -132,7 +134,7 @@ public class SelectionManager : MonoBehaviour
         //var position = ovrCameraRig.centerEyeAnchor.position;
         //spawnedObject = Instantiate(selectedObject, position + new Vector3(0,0,position.z * 1), selectedObject.transform.rotation);
 
-        var position = selectedObject.transform.position + new Vector3(2, 0, 2);
+        var position = selectedObject.transform.position + new Vector3(2, 0, 5);
         spawnedObject = Instantiate(selectedObject, position, selectedObject.transform.rotation);
         
         // move the spawned object down by 2 units
