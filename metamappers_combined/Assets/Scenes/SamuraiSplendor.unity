@@ -1540,6 +1540,11 @@ PrefabInstance:
       propertyPath: handTransform
       value: 
       objectReference: {fileID: 1624327401}
+    - target: {fileID: 3291053418466631085, guid: 45cb0bb7129814a8e93af03c43f72911,
+        type: 3}
+      propertyPath: maxLength
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3291962814421852533, guid: 45cb0bb7129814a8e93af03c43f72911,
         type: 3}
       propertyPath: rayTransform

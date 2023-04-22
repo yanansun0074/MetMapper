@@ -8106,7 +8106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cursorVisual: {fileID: 3757764028452235843}
-  maxLength: 1000
+  maxLength: 20
   _laserBeamBehavior: 2
 --- !u!114 &3870096353948220221
 MonoBehaviour:
