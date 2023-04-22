@@ -13,7 +13,6 @@ public class SelectionManager : MonoBehaviour
     public string artName;
     GameObject selectedObject;
     GameObject spawnedObject;
-    Transform parent;
     
     // originally I wanted to spawn the UI in front of camera, but wasn't working
     // may come back to this
@@ -34,7 +33,6 @@ public class SelectionManager : MonoBehaviour
         // on start there is no selected object or spawned object
         selectedObject = null;
         spawnedObject = null;
-        parent = null;
         
         // canvas that displays selction UI
         raycastCanvas = GameObject.FindGameObjectWithTag("RaycastCanvas").GetComponent<Canvas>();
@@ -106,12 +104,10 @@ public class SelectionManager : MonoBehaviour
         // destroy the spawned object and stop showing canvas
         Destroy(spawnedObject);
         raycastCanvas.enabled = false;
-        selectedObject.transform.parent = parent;
         
         // no selected object anymore
         selectedObject = null;
         spawnedObject = null;
-        parent = null;
     }
     
     // coroutine to give time to detect laser
@@ -135,12 +131,7 @@ public class SelectionManager : MonoBehaviour
         //ovrCameraRig = GameObject.Find("OVRCameraRig").GetComponent<OVRCameraRig>();
         //var position = ovrCameraRig.centerEyeAnchor.position;
         //spawnedObject = Instantiate(selectedObject, position + new Vector3(0,0,position.z * 1), selectedObject.transform.rotation);
-        if (selectedObject.transform.parent != null)
-        {
-            parent = selectedObject.transform.parent;
-            selectedObject.transform.parent = null;
-        }
-        
+
         var position = selectedObject.transform.position + new Vector3(2, 0, 2);
         spawnedObject = Instantiate(selectedObject, position, selectedObject.transform.rotation);
         
