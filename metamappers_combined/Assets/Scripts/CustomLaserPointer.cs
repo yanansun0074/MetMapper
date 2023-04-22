@@ -31,10 +31,13 @@ public class CustomLaserPointer : MonoBehaviour
     public bool LaserHit()
     {
         // raycast follows laser line rendering, get hit from collision of ray
+        //if (Physics.Raycast (handTransform.transform.position, handTransform.forward, out hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("Selectable")))
         if (Physics.Raycast (handTransform.transform.position, handTransform.forward, out hit))
+
         {
             //debug canvas
-            //raycastText.text = hit.transform.tag;
+            //raycastText.text = hit.transform.name;
+            
             // if laser hits art piece
             if (hit.transform.tag == "Art")
             {

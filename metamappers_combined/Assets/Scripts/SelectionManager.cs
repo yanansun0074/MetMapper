@@ -13,11 +13,12 @@ public class SelectionManager : MonoBehaviour
     public string artName;
     GameObject selectedObject;
     GameObject spawnedObject;
+    Transform parent;
     
     // originally I wanted to spawn the UI in front of camera, but wasn't working
     // may come back to this
     [SerializeField]
-    Camera OVRCamera;
+    OVRCameraRig ovrCameraRig;
     
     // close button on UI
     [SerializeField]
@@ -33,6 +34,7 @@ public class SelectionManager : MonoBehaviour
         // on start there is no selected object or spawned object
         selectedObject = null;
         spawnedObject = null;
+        parent = null;
         
         // canvas that displays selction UI
         raycastCanvas = GameObject.FindGameObjectWithTag("RaycastCanvas").GetComponent<Canvas>();
@@ -104,10 +106,12 @@ public class SelectionManager : MonoBehaviour
         // destroy the spawned object and stop showing canvas
         Destroy(spawnedObject);
         raycastCanvas.enabled = false;
+        selectedObject.transform.parent = parent;
         
         // no selected object anymore
         selectedObject = null;
         spawnedObject = null;
+        parent = null;
     }
     
     // coroutine to give time to detect laser
@@ -128,15 +132,25 @@ public class SelectionManager : MonoBehaviour
         raycastText.text = "Name: " + artName;
         
         // spawn the same art piece game object
-        spawnedObject = Instantiate(selectedObject, selectedObject.transform.position + selectedObject.transform.forward * 2, selectedObject.transform.rotation);
+        //ovrCameraRig = GameObject.Find("OVRCameraRig").GetComponent<OVRCameraRig>();
+        //var position = ovrCameraRig.centerEyeAnchor.position;
+        //spawnedObject = Instantiate(selectedObject, position + new Vector3(0,0,position.z * 1), selectedObject.transform.rotation);
+        if (selectedObject.transform.parent != null)
+        {
+            parent = selectedObject.transform.parent;
+            selectedObject.transform.parent = null;
+        }
+        
+        var position = selectedObject.transform.position + new Vector3(2, 0, 2);
+        spawnedObject = Instantiate(selectedObject, position, selectedObject.transform.rotation);
         
         // move the spawned object down by 2 units
         // might need to change this so that it is moved relative to the floor
         // so that it works well for all artpieces
-        spawnedObject.transform.position += new Vector3(0, -2, 0);
+        //spawnedObject.transform.position += new Vector3(0, -2, 0);
         raycastCanvas.transform.position = spawnedObject.transform.position + new Vector3(0, 0, 3);
         
         // scale the object down so that the user can see it easily
-        spawnedObject.transform.localScale = new Vector3(selectedObject.transform.localScale.x * 1.3f, selectedObject.transform.localScale.y * 1.3f, selectedObject.transform.localScale.z * 1.3f);
+        spawnedObject.transform.localScale = new Vector3(selectedObject.transform.localScale.x * 1.05f, selectedObject.transform.localScale.y * 1.05f, selectedObject.transform.localScale.z * 1.05f);
     }
 }

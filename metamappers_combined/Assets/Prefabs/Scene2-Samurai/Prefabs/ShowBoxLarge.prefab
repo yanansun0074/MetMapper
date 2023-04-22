@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8653855288252256136}
   - component: {fileID: 4754491848277784438}
   - component: {fileID: 8462212125432563005}
-  - component: {fileID: 9061271744204406701}
   m_Layer: 0
   m_Name: GlassBox
   m_TagString: Untagged
@@ -84,19 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9061271744204406701
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680675863925207726}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1513728501437109972
 GameObject:
   m_ObjectHideFlags: 0
