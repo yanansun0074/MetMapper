@@ -79,8 +79,7 @@ public class ArtSelectionManager : MonoBehaviour
         // there must be a selected and spawned object to rotate
         if (selectedObject != null && spawnedObject != null)
         {
-            raycastText.text = leftThumbstickHorizontal.ToString();
-            Vector3 position = spawnedObject.GetComponent<Renderer>().bounds.center;
+            Vector3 position = spawnedObject.GetComponent<Collider>().bounds.center;
             // if the thumbstick is being moved horizontally and the horizontal position is greater than the vertical position
             if (leftThumbstickHorizontal != 0 && Mathf.Abs(leftThumbstickHorizontal) > Mathf.Abs(leftThumbstickVertical))
             {
@@ -136,7 +135,8 @@ public class ArtSelectionManager : MonoBehaviour
         //var position = ovrCameraRig.centerEyeAnchor.position;
         //spawnedObject = Instantiate(selectedObject, position + new Vector3(0,0,position.z * 1), selectedObject.transform.rotation);
         
-        Vector3 position = selectedObject.transform.position + (selectedObject.transform.forward * selectedObject.transform.localScale.z * 5);
+        //Vector3 position = selectedObject.transform.position + (selectedObject.transform.forward * selectedObject.transform.localScale.z * 5);
+        Vector3 position = selectedObject.transform.position + (selectedObject.transform.forward * 5);
         spawnedObject = Instantiate(selectedObject, position, selectedObject.transform.rotation);
         
         // move the spawned object down by 2 units

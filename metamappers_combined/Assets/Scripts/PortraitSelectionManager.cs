@@ -79,7 +79,8 @@ public class PortraitSelectionManager : MonoBehaviour
         // there must be a selected and spawned object to rotate
         if (selectedObject != null && spawnedObject != null)
         {
-            Vector3 position = spawnedObject.GetComponent<Renderer>().bounds.center;
+            //Vector3 position = spawnedObject.GetComponent<Renderer>().bounds.center;
+            Vector3 position = spawnedObject.GetComponent<Collider>().bounds.center;
             // if the thumbstick is being moved horizontally and the horizontal position is greater than the vertical position
             if (leftThumbstickHorizontal > 0 && Mathf.Abs(leftThumbstickHorizontal) > Mathf.Abs(leftThumbstickVertical))
             {
