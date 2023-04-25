@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class SelectionManager : MonoBehaviour
+public class ArtSelectionManager : MonoBehaviour
 {
     // Tutorial for raycasting in VR: https://www.youtube.com/watch?v=sPl1tPp7xt4
     public Canvas raycastCanvas; // canvas that displays selection UI
@@ -58,7 +58,7 @@ public class SelectionManager : MonoBehaviour
             // from 'CustomLaserPointer.cs" file
             // also make sure there is no selected or spawned object
             // so we are not spawning more than one at a time
-            if (CustomLaserPointer.instance.LaserHit() && spawnedObject == null && selectedObject == null)
+            if (CustomLaserPointer.instance.LaserHitArt() && spawnedObject == null && selectedObject == null)
             {
                 // set the selected object to the hit object
                 RaycastHit hit = CustomLaserPointer.instance.getHit();
@@ -79,6 +79,7 @@ public class SelectionManager : MonoBehaviour
         // there must be a selected and spawned object to rotate
         if (selectedObject != null && spawnedObject != null)
         {
+            raycastText.text = leftThumbstickHorizontal.ToString();
             Vector3 position = spawnedObject.GetComponent<Renderer>().bounds.center;
             // if the thumbstick is being moved horizontally and the horizontal position is greater than the vertical position
             if (leftThumbstickHorizontal != 0 && Mathf.Abs(leftThumbstickHorizontal) > Mathf.Abs(leftThumbstickVertical))
@@ -86,7 +87,7 @@ public class SelectionManager : MonoBehaviour
                 // rotate spawned object about y
                 float angle = Mathf.Atan(leftThumbstickHorizontal) * Mathf.Rad2Deg;
                 //spawnedObject.transform.rotation *= Quaternion.Euler(0f, -angle * Time.deltaTime * 5, 0f);
-                spawnedObject.transform.RotateAround(position, Vector3.up, -angle * Time.deltaTime * 5);
+                spawnedObject.transform.RotateAround(position, spawnedObject.transform.up, -angle * Time.deltaTime * 5);
             }
             
             // if the thumbstick is being moved vertically and the vertical position is greater than the horizontal position
@@ -95,7 +96,7 @@ public class SelectionManager : MonoBehaviour
                 // rotate spawned object about x
                 float angle = Mathf.Atan(leftThumbstickVertical) * Mathf.Rad2Deg;
                 //spawnedObject.transform.rotation *= Quaternion.Euler(-angle * Time.deltaTime * 5, 0f, 0f);
-                spawnedObject.transform.RotateAround(position, Vector3.right, -angle * Time.deltaTime * 5);
+                spawnedObject.transform.RotateAround(position, spawnedObject.transform.right, -angle * Time.deltaTime * 5);
             }
 
         }
@@ -135,13 +136,13 @@ public class SelectionManager : MonoBehaviour
         //var position = ovrCameraRig.centerEyeAnchor.position;
         //spawnedObject = Instantiate(selectedObject, position + new Vector3(0,0,position.z * 1), selectedObject.transform.rotation);
         
-        Vector3 position = selectedObject.transform.position + new Vector3(0, 0, 5);
+        Vector3 position = selectedObject.transform.position + (selectedObject.transform.forward * selectedObject.transform.localScale.z * 5);
         spawnedObject = Instantiate(selectedObject, position, selectedObject.transform.rotation);
         
         // move the spawned object down by 2 units
         // might need to change this so that it is moved relative to the floor
         // so that it works well for all artpieces
-        spawnedObject.transform.position += new Vector3(2, 0, 0);
+        spawnedObject.transform.position += spawnedObject.transform.right * 2;
         //raycastCanvas.transform.position = position + new Vector3(-2, 0, 0);
         
         // scale the object down so that the user can see it easily

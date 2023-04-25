@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4202393208778111320}
   m_Layer: 8
   m_Name: Portraits28
-  m_TagString: Art
+  m_TagString: Portrait
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

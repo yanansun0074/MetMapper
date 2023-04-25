@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/arms_armor.unity
     guid: bc20c7f406ec40e40b8addf3f65ad6db
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/SamuraiSplendor.unity
     guid: 7996a3c778a784e91aecb52cd6727a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ChineseCeramics.unity
     guid: b4d28f63e1c9c4fab8cfe6c59f333cce
   - enabled: 0

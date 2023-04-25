@@ -7,6 +7,7 @@ TagManager:
   - RaycastCanvas
   - RaycastText
   - Art
+  - Portrait
   layers:
   - Default
   - TransparentFX

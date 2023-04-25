@@ -28,7 +28,7 @@ public class CustomLaserPointer : MonoBehaviour
         //raycastText = GameObject.FindGameObjectWithTag("RaycastText").GetComponent<TextMeshProUGUI>();
     }
     
-    public bool LaserHit()
+    public bool LaserHitArt()
     {
         // raycast follows laser line rendering, get hit from collision of ray
         //if (Physics.Raycast (handTransform.transform.position, handTransform.forward, out hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("Selectable")))
@@ -40,6 +40,26 @@ public class CustomLaserPointer : MonoBehaviour
             
             // if laser hits art piece
             if (hit.transform.tag == "Art")
+            {
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    public bool LaserHitPortrait()
+    {
+        // raycast follows laser line rendering, get hit from collision of ray
+        //if (Physics.Raycast (handTransform.transform.position, handTransform.forward, out hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("Selectable")))
+        if (Physics.Raycast (handTransform.transform.position, handTransform.forward, out hit))
+
+        {
+            //debug canvas
+            //raycastText.text = hit.transform.name;
+            
+            // if laser hits art piece
+            if (hit.transform.tag == "Portrait")
             {
                 return true;
             }
