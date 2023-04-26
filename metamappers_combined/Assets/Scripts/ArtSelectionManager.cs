@@ -51,7 +51,7 @@ public class ArtSelectionManager : MonoBehaviour
         leftHand = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch);
                 
         // if left hand trigger is pressed
-        if (leftHand > 0.5)
+        if (leftHand > 0.4)
         {
             // getting the laser pointer instance
             // check if raycast hit an artpiece
@@ -71,7 +71,7 @@ public class ArtSelectionManager : MonoBehaviour
         
         Button closeButton = close.GetComponent<Button>();
         closeButton.onClick.AddListener(CloseUI);
-        
+
         // get input from left controller thumbstick
         leftThumbstickHorizontal = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).x;
         leftThumbstickVertical = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick).y;
@@ -80,8 +80,10 @@ public class ArtSelectionManager : MonoBehaviour
         if (selectedObject != null && spawnedObject != null)
         {
             Vector3 position = spawnedObject.GetComponent<Collider>().bounds.center;
+            ovrCameraRig = GameObject.Find("OVRCameraRig").GetComponent<OVRCameraRig>();
             // if the thumbstick is being moved horizontally and the horizontal position is greater than the vertical position
-            if (leftThumbstickHorizontal != 0 && Mathf.Abs(leftThumbstickHorizontal) > Mathf.Abs(leftThumbstickVertical))
+            //if (leftThumbstickHorizontal != 0 && Mathf.Abs(leftThumbstickHorizontal) > Mathf.Abs(leftThumbstickVertical))
+            if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft) || OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight))
             {
                 // rotate spawned object about y
                 float angle = Mathf.Atan(leftThumbstickHorizontal) * Mathf.Rad2Deg;
@@ -90,12 +92,26 @@ public class ArtSelectionManager : MonoBehaviour
             }
             
             // if the thumbstick is being moved vertically and the vertical position is greater than the horizontal position
-            else if (leftThumbstickVertical != 0 && Mathf.Abs(leftThumbstickVertical) > Mathf.Abs(leftThumbstickHorizontal))
+            //else if (leftThumbstickVertical != 0 && Mathf.Abs(leftThumbstickVertical) > Mathf.Abs(leftThumbstickHorizontal))
+            else if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickUp) || OVRInput.Get(OVRInput.Button.PrimaryThumbstickDown))
             {
                 // rotate spawned object about x
                 float angle = Mathf.Atan(leftThumbstickVertical) * Mathf.Rad2Deg;
                 //spawnedObject.transform.rotation *= Quaternion.Euler(-angle * Time.deltaTime * 5, 0f, 0f);
                 spawnedObject.transform.RotateAround(position, spawnedObject.transform.right, -angle * Time.deltaTime * 5);
+            }
+            
+            if (OVRInput.Get(OVRInput.Button.Three)) // X button
+            {
+                // zoom in, object gets closer to camera
+                spawnedObject.transform.parent.gameObject.transform.Translate(Vector3.forward * 0.1f);                //spawnedObject.transform.position += selectedObject.transform.parent.gameObject.transform.TransformDirection(selectedObject.transform.parent.gameObject.transform.forward * 0.1f);
+
+            }
+            
+            if (OVRInput.Get(OVRInput.Button.Four)) // Y button
+            {
+                // zoom out, object gets farther from camera
+                spawnedObject.transform.parent.gameObject.transform.Translate(Vector3.forward * -0.1f);                   //spawnedObject.transform.position += selectedObject.transform.parent.gameObject.transform.TransformDirection(selectedObject.transform.parent.gameObject.transform.forward * -0.1f);
             }
 
         }
@@ -135,8 +151,8 @@ public class ArtSelectionManager : MonoBehaviour
         //var position = ovrCameraRig.centerEyeAnchor.position;
         //spawnedObject = Instantiate(selectedObject, position + new Vector3(0,0,position.z * 1), selectedObject.transform.rotation);
         
+        Vector3 position = selectedObject.transform.position + (selectedObject.transform.forward * selectedObject.GetComponent<Collider>().bounds.size.x * 2);
         //Vector3 position = selectedObject.transform.position + (selectedObject.transform.forward * selectedObject.transform.localScale.z * 5);
-        Vector3 position = selectedObject.transform.position + (selectedObject.transform.forward * 5);
         spawnedObject = Instantiate(selectedObject, position, selectedObject.transform.rotation);
         
         // move the spawned object down by 2 units
@@ -147,5 +163,7 @@ public class ArtSelectionManager : MonoBehaviour
         
         // scale the object down so that the user can see it easily
         spawnedObject.transform.localScale = new Vector3(selectedObject.transform.localScale.x * 1.05f, selectedObject.transform.localScale.y * 1.05f, selectedObject.transform.localScale.z * 1.05f);
+        
+        spawnedObject.transform.parent = selectedObject.transform.parent.gameObject.transform;
     }
 }

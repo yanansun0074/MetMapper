@@ -51,7 +51,7 @@ public class PortraitSelectionManager : MonoBehaviour
         leftHand = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch);
                 
         // if left hand trigger is pressed
-        if (leftHand > 0.5)
+        if (leftHand > 0.4)
         {
             // getting the laser pointer instance
             // check if raycast hit an artpiece
@@ -80,53 +80,51 @@ public class PortraitSelectionManager : MonoBehaviour
         if (selectedObject != null && spawnedObject != null)
         {
             //Vector3 position = spawnedObject.GetComponent<Renderer>().bounds.center;
-            Vector3 position = spawnedObject.GetComponent<Collider>().bounds.center;
+            //Vector3 position = spawnedObject.GetComponent<Collider>().bounds.center;
             // if the thumbstick is being moved horizontally and the horizontal position is greater than the vertical position
-            if (leftThumbstickHorizontal > 0 && Mathf.Abs(leftThumbstickHorizontal) > Mathf.Abs(leftThumbstickVertical))
+
+            if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft))
             {
                 // rotate spawned object about y
-                //float angle = Mathf.Atan(leftThumbstickHorizontal) * Mathf.Rad2Deg;
-                //spawnedObject.transform.RotateAround(position, Vector3.up, -angle * Time.deltaTime * 5);
-                spawnedObject.transform.position += spawnedObject.transform.right * 0.5f;
+                //spawnedObject.transform.position += spawnedObject.transform.TransformDirection(selectedObject.transform.right * 0.1f);
+                spawnedObject.transform.Translate(Vector3.right * 0.1f);
             }
             
-            else if (leftThumbstickHorizontal < 0 && Mathf.Abs(leftThumbstickHorizontal) > Mathf.Abs(leftThumbstickVertical))
+            if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight))
             {
                 // rotate spawned object about y
-                //float angle = Mathf.Atan(leftThumbstickHorizontal) * Mathf.Rad2Deg;
-                //spawnedObject.transform.RotateAround(position, Vector3.up, -angle * Time.deltaTime * 5);
-                spawnedObject.transform.position += spawnedObject.transform.right * -0.5f;
+                //spawnedObject.transform.position += spawnedObject.transform.TransformDirection(selectedObject.transform.right * -0.1f);
+                spawnedObject.transform.Translate(Vector3.right * -0.1f);
             }
             
             // if the thumbstick is being moved vertically and the vertical position is greater than the horizontal position
-            else if (leftThumbstickVertical > 0 && Mathf.Abs(leftThumbstickVertical) > Mathf.Abs(leftThumbstickHorizontal))
+            if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickUp))
             {
                 // rotate spawned object about x
-                //float angle = Mathf.Atan(leftThumbstickVertical) * Mathf.Rad2Deg;
-                //spawnedObject.transform.RotateAround(position, Vector3.right, -angle * Time.deltaTime * 5);
-                spawnedObject.transform.position += spawnedObject.transform.up * 0.5f;
+                //spawnedObject.transform.position += spawnedObject.transform.TransformDirection(selectedObject.transform.up * 0.1f);
+                spawnedObject.transform.Translate(Vector3.up * 0.1f);
             }
             
-            else if (leftThumbstickVertical < 0 && Mathf.Abs(leftThumbstickVertical) > Mathf.Abs(leftThumbstickHorizontal))
+            if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickDown))
             {
                 // rotate spawned object about x
-                //float angle = Mathf.Atan(leftThumbstickVertical) * Mathf.Rad2Deg;
-                //spawnedObject.transform.RotateAround(position, Vector3.right, -angle * Time.deltaTime * 5);
-                spawnedObject.transform.position += spawnedObject.transform.up * -0.5f;
+                //spawnedObject.transform.position += spawnedObject.transform.TransformDirection(selectedObject.transform.up * -0.1f);
+                spawnedObject.transform.Translate(Vector3.up * -0.1f);
             }
             
             if (OVRInput.Get(OVRInput.Button.Three)) // X button
             {
                 // zoom in, object gets closer to camera
-                spawnedObject.transform.position += spawnedObject.transform.forward * 0.5f;
+                //spawnedObject.transform.position += spawnedObject.transform.TransformDirection(selectedObject.transform.forward * 0.1f);
+                spawnedObject.transform.Translate(Vector3.forward * 0.1f);
             }
             
-            else if (OVRInput.Get(OVRInput.Button.Four)) // Y button
+            if (OVRInput.Get(OVRInput.Button.Four)) // Y button
             {
                 // zoom out, object gets farther from camera
-                spawnedObject.transform.position += spawnedObject.transform.forward * -0.5f;
+                //spawnedObject.transform.position += spawnedObject.transform.TransformDirection(selectedObject.transform.forward * -0.1f);
+                spawnedObject.transform.Translate(Vector3.forward * -0.1f);
             }
-            
         }
     }
     
@@ -164,6 +162,7 @@ public class PortraitSelectionManager : MonoBehaviour
         //var position = ovrCameraRig.centerEyeAnchor.position;
         //spawnedObject = Instantiate(selectedObject, position + new Vector3(0,0,position.z * 1), selectedObject.transform.rotation);
         
+        //Vector3 position = selectedObject.transform.position + (selectedObject.transform.forward * selectedObject.GetComponent<Collider>().bounds.size.z);
         Vector3 position = selectedObject.transform.position + (selectedObject.transform.forward * selectedObject.transform.localScale.z * 5);
         spawnedObject = Instantiate(selectedObject, position, selectedObject.transform.rotation);
         
@@ -177,3 +176,5 @@ public class PortraitSelectionManager : MonoBehaviour
         spawnedObject.transform.localScale = new Vector3(selectedObject.transform.localScale.x * 1.05f, selectedObject.transform.localScale.y * 1.05f, selectedObject.transform.localScale.z * 1.05f);
     }
 }
+
+
