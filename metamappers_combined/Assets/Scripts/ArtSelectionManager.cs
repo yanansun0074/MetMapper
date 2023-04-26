@@ -100,20 +100,6 @@ public class ArtSelectionManager : MonoBehaviour
                 //spawnedObject.transform.rotation *= Quaternion.Euler(-angle * Time.deltaTime * 5, 0f, 0f);
                 spawnedObject.transform.RotateAround(position, spawnedObject.transform.right, -angle * Time.deltaTime * 5);
             }
-            
-            if (OVRInput.Get(OVRInput.Button.Three)) // X button
-            {
-                // zoom in, object gets closer to camera
-                spawnedObject.transform.parent.gameObject.transform.Translate(Vector3.forward * 0.1f);                //spawnedObject.transform.position += selectedObject.transform.parent.gameObject.transform.TransformDirection(selectedObject.transform.parent.gameObject.transform.forward * 0.1f);
-
-            }
-            
-            if (OVRInput.Get(OVRInput.Button.Four)) // Y button
-            {
-                // zoom out, object gets farther from camera
-                spawnedObject.transform.parent.gameObject.transform.Translate(Vector3.forward * -0.1f);                   //spawnedObject.transform.position += selectedObject.transform.parent.gameObject.transform.TransformDirection(selectedObject.transform.parent.gameObject.transform.forward * -0.1f);
-            }
-
         }
     }
     
@@ -163,7 +149,5 @@ public class ArtSelectionManager : MonoBehaviour
         
         // scale the object down so that the user can see it easily
         spawnedObject.transform.localScale = new Vector3(selectedObject.transform.localScale.x * 1.05f, selectedObject.transform.localScale.y * 1.05f, selectedObject.transform.localScale.z * 1.05f);
-        
-        spawnedObject.transform.parent = selectedObject.transform.parent.gameObject.transform;
     }
 }

@@ -87,14 +87,14 @@ public class PortraitSelectionManager : MonoBehaviour
             {
                 // rotate spawned object about y
                 //spawnedObject.transform.position += spawnedObject.transform.TransformDirection(selectedObject.transform.right * 0.1f);
-                spawnedObject.transform.Translate(Vector3.right * 0.1f);
+                spawnedObject.transform.Translate(Vector3.right * 0.05f);
             }
             
             if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight))
             {
                 // rotate spawned object about y
                 //spawnedObject.transform.position += spawnedObject.transform.TransformDirection(selectedObject.transform.right * -0.1f);
-                spawnedObject.transform.Translate(Vector3.right * -0.1f);
+                spawnedObject.transform.Translate(Vector3.right * -0.05f);
             }
             
             // if the thumbstick is being moved vertically and the vertical position is greater than the horizontal position
@@ -102,28 +102,28 @@ public class PortraitSelectionManager : MonoBehaviour
             {
                 // rotate spawned object about x
                 //spawnedObject.transform.position += spawnedObject.transform.TransformDirection(selectedObject.transform.up * 0.1f);
-                spawnedObject.transform.Translate(Vector3.up * 0.1f);
+                spawnedObject.transform.Translate(Vector3.up * 0.05f);
             }
             
             if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickDown))
             {
                 // rotate spawned object about x
                 //spawnedObject.transform.position += spawnedObject.transform.TransformDirection(selectedObject.transform.up * -0.1f);
-                spawnedObject.transform.Translate(Vector3.up * -0.1f);
+                spawnedObject.transform.Translate(Vector3.up * -0.05f);
             }
             
             if (OVRInput.Get(OVRInput.Button.Three)) // X button
             {
                 // zoom in, object gets closer to camera
                 //spawnedObject.transform.position += spawnedObject.transform.TransformDirection(selectedObject.transform.forward * 0.1f);
-                spawnedObject.transform.Translate(Vector3.forward * 0.1f);
+                spawnedObject.transform.Translate(Vector3.forward * 0.05f);
             }
             
             if (OVRInput.Get(OVRInput.Button.Four)) // Y button
             {
                 // zoom out, object gets farther from camera
                 //spawnedObject.transform.position += spawnedObject.transform.TransformDirection(selectedObject.transform.forward * -0.1f);
-                spawnedObject.transform.Translate(Vector3.forward * -0.1f);
+                spawnedObject.transform.Translate(Vector3.forward * -0.05f);
             }
         }
     }
