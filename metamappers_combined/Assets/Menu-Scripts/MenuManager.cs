@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
@@ -24,11 +27,34 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     public GameObject menuspawn;
 
+    [SerializeField]
+    public GameObject selectables;
+
+    [SerializeField]
+    public GameObject selectable_button;
+
     // Start is called before the first frame update
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
         CloseAll();
+
+        GameObject[] art = GameObject.FindGameObjectsWithTag("Art");
+        GameObject[] portraits = GameObject.FindGameObjectsWithTag("Portrait");
+
+        foreach (GameObject obj in art)
+        {
+            GameObject created_btn = (GameObject) Instantiate(selectable_button, selectables.transform);
+            TextMeshProUGUI btn_txt = created_btn.GetComponentInChildren<TextMeshProUGUI>();
+            btn_txt.text = obj.name;
+        }
+
+        foreach (GameObject obj in portraits)
+        {
+            GameObject created_btn = (GameObject) Instantiate(selectable_button, selectables.transform);
+            TextMeshProUGUI btn_txt = created_btn.GetComponentInChildren<TextMeshProUGUI>();
+            btn_txt.text = obj.name;
+        }
     }
 
     // Update is called once per frame
@@ -53,6 +79,22 @@ public class MenuManager : MonoBehaviour
 
         if (playerInput.actions["Back"].triggered) {
             GoBackToMain();
+        }
+
+        // if (playerInput.actions["LoadGreek"].triggered) {
+        //     SceneManager.LoadScene("Scene4-GreekSculptures");
+        // }
+
+        if (playerInput.actions["LoadChinese"].triggered) {
+            SceneManager.LoadScene("ChineseCeramics");
+        }
+
+        if (playerInput.actions["LoadArms"].triggered) {
+            SceneManager.LoadScene("arms_armor");
+        }
+
+        if (playerInput.actions["LoadSamurai"].triggered) {
+            SceneManager.LoadScene("SamuraiSplendor");
         }
     }
 

@@ -28975,6 +28975,10 @@ struct MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16  : public MonoBehav
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___ondisplay_8;
 	// UnityEngine.GameObject MenuManager::menuspawn
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___menuspawn_9;
+	// UnityEngine.GameObject MenuManager::selectables
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___selectables_10;
+	// UnityEngine.GameObject MenuManager::selectable_button
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___selectable_button_11;
 };
 
 // Oculus.Interaction.Demo.MeshBlit

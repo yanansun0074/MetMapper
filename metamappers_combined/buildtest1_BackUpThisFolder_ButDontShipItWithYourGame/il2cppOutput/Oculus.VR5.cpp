@@ -12696,10 +12696,10 @@ IL_0262:
 		float L_87 = __this->___MoveScale_27;
 		float L_88 = __this->___MoveScaleMultiplier_32;
 		V_5 = ((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(((float)il2cpp_codegen_multiply(L_86, (0.100000001f))), L_87)), L_88));
-		// Vector2 primaryAxis = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
+		// Vector2 primaryAxis = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick); //change movement to use right joystick
 		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
 		Vector2_t1FD6F485C871E832B347AB2DC8CBA08B739D8DF7 L_89;
-		L_89 = OVRInput_Get_mF4EA350D5898449529C641C72B7D440DF81180C8(1, ((int32_t)-2147483648LL), NULL);
+		L_89 = OVRInput_Get_mF4EA350D5898449529C641C72B7D440DF81180C8(2, ((int32_t)-2147483648LL), NULL);
 		V_8 = L_89;
 		// if (FixedSpeedSteps > 0)
 		int32_t L_90 = __this->___FixedSpeedSteps_12;
@@ -12879,7 +12879,7 @@ IL_0425:
 		bool L_162 = __this->___EnableRotation_23;
 		if (!L_162)
 		{
-			goto IL_0638;
+			goto IL_0630;
 		}
 	}
 	{
@@ -12998,25 +12998,25 @@ IL_04d5:
 		bool L_192 = __this->___SnapRotation_10;
 		if (!L_192)
 		{
-			goto IL_05ab;
+			goto IL_05a3;
 		}
 	}
 	{
-		// if (OVRInput.Get(OVRInput.Button.SecondaryThumbstickLeft) ||
+		// if (OVRInput.Get(OVRInput.Button.Two) || //turn left with A button
 		//     (RotationEitherThumbstick && OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft)))
 		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
 		bool L_193;
-		L_193 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(((int32_t)67108864), ((int32_t)-2147483648LL), NULL);
+		L_193 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(2, ((int32_t)-2147483648LL), NULL);
 		if (L_193)
 		{
-			goto IL_052e;
+			goto IL_052a;
 		}
 	}
 	{
 		bool L_194 = __this->___RotationEitherThumbstick_24;
 		if (!L_194)
 		{
-			goto IL_0556;
+			goto IL_0552;
 		}
 	}
 	{
@@ -13025,17 +13025,17 @@ IL_04d5:
 		L_195 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(((int32_t)262144), ((int32_t)-2147483648LL), NULL);
 		if (!L_195)
 		{
-			goto IL_0556;
+			goto IL_0552;
 		}
 	}
 
-IL_052e:
+IL_052a:
 	{
 		// if (ReadyToSnapTurn)
 		bool L_196 = __this->___ReadyToSnapTurn_40;
 		if (!L_196)
 		{
-			goto IL_05f6;
+			goto IL_05ee;
 		}
 	}
 	{
@@ -13047,26 +13047,26 @@ IL_052e:
 		*((float*)L_198) = (float)((float)il2cpp_codegen_subtract(L_199, L_200));
 		// ReadyToSnapTurn = false;
 		__this->___ReadyToSnapTurn_40 = (bool)0;
-		goto IL_05f6;
+		goto IL_05ee;
 	}
 
-IL_0556:
+IL_0552:
 	{
-		// else if (OVRInput.Get(OVRInput.Button.SecondaryThumbstickRight) ||
+		// else if (OVRInput.Get(OVRInput.Button.One) || //turn right with B button
 		//     (RotationEitherThumbstick && OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight)))
 		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
 		bool L_201;
-		L_201 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(((int32_t)134217728), ((int32_t)-2147483648LL), NULL);
+		L_201 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(1, ((int32_t)-2147483648LL), NULL);
 		if (L_201)
 		{
-			goto IL_0580;
+			goto IL_0578;
 		}
 	}
 	{
 		bool L_202 = __this->___RotationEitherThumbstick_24;
 		if (!L_202)
 		{
-			goto IL_05a2;
+			goto IL_059a;
 		}
 	}
 	{
@@ -13075,17 +13075,17 @@ IL_0556:
 		L_203 = OVRInput_Get_m8CF227684F49E1C26239D78F826E11A956E909C1(((int32_t)524288), ((int32_t)-2147483648LL), NULL);
 		if (!L_203)
 		{
-			goto IL_05a2;
+			goto IL_059a;
 		}
 	}
 
-IL_0580:
+IL_0578:
 	{
 		// if (ReadyToSnapTurn)
 		bool L_204 = __this->___ReadyToSnapTurn_40;
 		if (!L_204)
 		{
-			goto IL_05f6;
+			goto IL_05ee;
 		}
 	}
 	{
@@ -13097,17 +13097,17 @@ IL_0580:
 		*((float*)L_206) = (float)((float)il2cpp_codegen_add(L_207, L_208));
 		// ReadyToSnapTurn = false;
 		__this->___ReadyToSnapTurn_40 = (bool)0;
-		goto IL_05f6;
+		goto IL_05ee;
 	}
 
-IL_05a2:
+IL_059a:
 	{
 		// ReadyToSnapTurn = true;
 		__this->___ReadyToSnapTurn_40 = (bool)1;
-		goto IL_05f6;
+		goto IL_05ee;
 	}
 
-IL_05ab:
+IL_05a3:
 	{
 		// Vector2 secondaryAxis = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
 		il2cpp_codegen_runtime_class_init_inline(OVRInput_t759D9CC8F14D8539AD78A0375A2306C39D77100A_il2cpp_TypeInfo_var);
@@ -13118,7 +13118,7 @@ IL_05ab:
 		bool L_210 = __this->___RotationEitherThumbstick_24;
 		if (!L_210)
 		{
-			goto IL_05e1;
+			goto IL_05d9;
 		}
 	}
 	{
@@ -13134,7 +13134,7 @@ IL_05ab:
 		L_213 = Vector2_get_sqrMagnitude_mA16336720C14EEF8BA9B55AE33B98C9EE2082BDC_inline((&V_16), NULL);
 		if ((!(((float)L_212) < ((float)L_213))))
 		{
-			goto IL_05e1;
+			goto IL_05d9;
 		}
 	}
 	{
@@ -13143,7 +13143,7 @@ IL_05ab:
 		V_15 = L_214;
 	}
 
-IL_05e1:
+IL_05d9:
 	{
 		// euler.y += secondaryAxis.x * rotateInfluence;
 		float* L_215 = (&(&V_10)->___y_3);
@@ -13155,13 +13155,13 @@ IL_05e1:
 		*((float*)L_216) = (float)((float)il2cpp_codegen_add(L_217, ((float)il2cpp_codegen_multiply(L_219, L_220))));
 	}
 
-IL_05f6:
+IL_05ee:
 	{
 		// if (RotateAroundGuardianCenter)
 		bool L_221 = __this->___RotateAroundGuardianCenter_11;
 		if (!L_221)
 		{
-			goto IL_0611;
+			goto IL_0609;
 		}
 	}
 	{
@@ -13176,7 +13176,7 @@ IL_05f6:
 		return;
 	}
 
-IL_0611:
+IL_0609:
 	{
 		// transform.RotateAround(CameraRig.centerEyeAnchor.position, Vector3.up, euler.y);
 		Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* L_225;
@@ -13196,7 +13196,7 @@ IL_0611:
 		Transform_RotateAround_m489C5BE8B8B15D0A5F4863DE6D23FF2CC8FA76C6(L_225, L_228, L_229, L_231, NULL);
 	}
 
-IL_0638:
+IL_0630:
 	{
 		// }
 		return;

@@ -18417,6 +18417,10 @@ struct MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16  : public MonoBehav
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___ondisplay_8;
 	// UnityEngine.GameObject MenuManager::menuspawn
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___menuspawn_9;
+	// UnityEngine.GameObject MenuManager::selectables
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___selectables_10;
+	// UnityEngine.GameObject MenuManager::selectable_button
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___selectable_button_11;
 };
 
 // Oculus.Interaction.Demo.MeshBlit
@@ -31313,9 +31317,9 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6479[3] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6480[1] = 
 {
 	static_cast<int32_t>(offsetof(U3CPrivateImplementationDetailsU3E_t1828878FB092BA210A76238953E3118A4B8005CC_StaticFields, ___532EAABD9574880DBF76B9B8CC00832C20A6EC113D682299550D7A6E0F345E25_0)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6482[6] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6482[8] = 
 {
-	static_cast<int32_t>(offsetof(MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16, ___playerInput_4)),static_cast<int32_t>(offsetof(MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16, ___menus_5)),static_cast<int32_t>(offsetof(MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16, ___main_6)),static_cast<int32_t>(offsetof(MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16, ___map_7)),static_cast<int32_t>(offsetof(MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16, ___ondisplay_8)),static_cast<int32_t>(offsetof(MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16, ___menuspawn_9)),};
+	static_cast<int32_t>(offsetof(MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16, ___playerInput_4)),static_cast<int32_t>(offsetof(MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16, ___menus_5)),static_cast<int32_t>(offsetof(MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16, ___main_6)),static_cast<int32_t>(offsetof(MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16, ___map_7)),static_cast<int32_t>(offsetof(MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16, ___ondisplay_8)),static_cast<int32_t>(offsetof(MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16, ___menuspawn_9)),static_cast<int32_t>(offsetof(MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16, ___selectables_10)),static_cast<int32_t>(offsetof(MenuManager_t34C8EA4F128D811DE986BE56D7938F2720BA7B16, ___selectable_button_11)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable6487[1] = 
 {
 	static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass41_0_tD03998B72130E379210125F837D005B365C1708B, ___handler_0)),};
