@@ -46,6 +46,7 @@ public class PortraitSelectionManager : MonoBehaviour
         
         // we want the canvas to be hidden at first, no selected object
         raycastCanvas.enabled = false;
+        raycastCanvas.GetComponent<Collider>().enabled = false;
     }
 
     // Update is called once per frame
@@ -138,6 +139,7 @@ public class PortraitSelectionManager : MonoBehaviour
         // destroy the spawned object and stop showing canvas
         Destroy(spawnedObject);
         raycastCanvas.enabled = false;
+        raycastCanvas.GetComponent<Collider>().enabled = false;
         
         // no selected object anymore
         selectedObject = null;
@@ -151,6 +153,7 @@ public class PortraitSelectionManager : MonoBehaviour
         
         // show canvas now
         raycastCanvas.enabled = true;
+        raycastCanvas.GetComponent<Collider>().enabled = true;
         
         // grab hit info, which art piece is selected
         RaycastHit hit = CustomLaserPointer.instance.getHit();

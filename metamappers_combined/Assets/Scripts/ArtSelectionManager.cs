@@ -46,6 +46,8 @@ public class ArtSelectionManager : MonoBehaviour
         
         // we want the canvas to be hidden at first, no selected object
         raycastCanvas.enabled = false;
+        raycastCanvas.GetComponent<Collider>().enabled = false;
+
     }
 
     // Update is called once per frame
@@ -113,6 +115,7 @@ public class ArtSelectionManager : MonoBehaviour
         // destroy the spawned object and stop showing canvas
         Destroy(spawnedObject);
         raycastCanvas.enabled = false;
+        raycastCanvas.GetComponent<Collider>().enabled = false;
         
         // no selected object anymore
         selectedObject = null;
@@ -126,11 +129,12 @@ public class ArtSelectionManager : MonoBehaviour
         
         // show canvas now
         raycastCanvas.enabled = true;
+        raycastCanvas.GetComponent<Collider>().enabled = true;
         
         // grab hit info, which art piece is selected
         RaycastHit hit = CustomLaserPointer.instance.getHit();
         selectedObject = hit.transform.gameObject;
-        
+                
         // get the art piece name (just the game object name for now)
         // and display it in UI
         Information art = selectedObject.GetComponent<Information>();
