@@ -9,6 +9,9 @@ TagManager:
   - Art
   - Portrait
   - Structure
+  - NameText
+  - ArtistYearText
+  - DescriptionText
   layers:
   - Default
   - TransparentFX

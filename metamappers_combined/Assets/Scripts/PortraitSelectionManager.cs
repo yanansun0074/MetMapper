@@ -8,11 +8,14 @@ public class PortraitSelectionManager : MonoBehaviour
 {
     // Tutorial for raycasting in VR: https://www.youtube.com/watch?v=sPl1tPp7xt4
     public Canvas raycastCanvas; // canvas that displays selection UI
-    public TextMeshProUGUI raycastText; // text on UI
+
     float leftHand; // this is to hold the value of the button click on controller
-    public string artName;
     GameObject selectedObject;
     GameObject spawnedObject;
+    
+    public static TextMeshProUGUI nameText;
+    public static TextMeshProUGUI artistYearText;
+    public static TextMeshProUGUI descriptionText;
     
     // originally I wanted to spawn the UI in front of camera, but wasn't working
     // may come back to this
@@ -37,8 +40,9 @@ public class PortraitSelectionManager : MonoBehaviour
         // canvas that displays selction UI
         raycastCanvas = GameObject.FindGameObjectWithTag("RaycastCanvas").GetComponent<Canvas>();
         
-        // text on UI
-        raycastText = GameObject.FindGameObjectWithTag("RaycastText").GetComponent<TextMeshProUGUI>();
+        nameText = GameObject.FindGameObjectWithTag("NameText").GetComponent<TextMeshProUGUI>();
+        artistYearText = GameObject.FindGameObjectWithTag("ArtistYearText").GetComponent<TextMeshProUGUI>();
+        descriptionText = GameObject.FindGameObjectWithTag("DescriptionText").GetComponent<TextMeshProUGUI>();
         
         // we want the canvas to be hidden at first, no selected object
         raycastCanvas.enabled = false;
@@ -154,8 +158,11 @@ public class PortraitSelectionManager : MonoBehaviour
         
         // get the art piece name (just the game object name for now)
         // and display it in UI
-        artName = hit.transform.gameObject.name;
-        raycastText.text = "Name: " + artName;
+        Information art = selectedObject.GetComponent<Information>();
+
+        nameText.text = art.GetName();
+        artistYearText.text = art.GetArtistYear();
+        descriptionText.text = art.GetDescription();
         
         // spawn the same art piece game object
         //ovrCameraRig = GameObject.Find("OVRCameraRig").GetComponent<OVRCameraRig>();
@@ -163,14 +170,18 @@ public class PortraitSelectionManager : MonoBehaviour
         //spawnedObject = Instantiate(selectedObject, position + new Vector3(0,0,position.z * 1), selectedObject.transform.rotation);
         
         //Vector3 position = selectedObject.transform.position + (selectedObject.transform.forward * selectedObject.GetComponent<Collider>().bounds.size.z);
-        Vector3 position = selectedObject.transform.position + (selectedObject.transform.forward * selectedObject.transform.localScale.z * 5);
-        spawnedObject = Instantiate(selectedObject, position, selectedObject.transform.rotation);
+        Vector3 position = selectedObject.transform.position + (selectedObject.transform.forward * 7);
+        spawnedObject = Instantiate(selectedObject, position + (selectedObject.transform.up * 3), selectedObject.transform.rotation);
         
         // move the spawned object down by 2 units
         // might need to change this so that it is moved relative to the floor
         // so that it works well for all artpieces
-        spawnedObject.transform.position += spawnedObject.transform.right * 2;
-        //raycastCanvas.transform.position = position + new Vector3(-2, 0, 0);
+        spawnedObject.transform.position += spawnedObject.transform.right * 4;
+        
+        Quaternion rotation = Quaternion.LookRotation(selectedObject.transform.forward * -1, Vector3.up);
+        raycastCanvas.transform.rotation = rotation;
+        raycastCanvas.transform.position = position + selectedObject.transform.up * 2;
+        //raycastCanvas.transform.Translate(Vector3.forward * -1f);
         
         // scale the object down so that the user can see it easily
         spawnedObject.transform.localScale = new Vector3(selectedObject.transform.localScale.x * 1.05f, selectedObject.transform.localScale.y * 1.05f, selectedObject.transform.localScale.z * 1.05f);
