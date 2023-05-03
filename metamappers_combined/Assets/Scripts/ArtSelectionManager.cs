@@ -9,6 +9,7 @@ public class ArtSelectionManager : MonoBehaviour
     // Tutorial for raycasting in VR: https://www.youtube.com/watch?v=sPl1tPp7xt4
     public Canvas raycastCanvas; // canvas that displays selection UI
     
+    public Transform leftHandTransform;
     float leftHand; // this is to hold the value of the button click on controller
     GameObject selectedObject;
     GameObject spawnedObject;
@@ -19,8 +20,8 @@ public class ArtSelectionManager : MonoBehaviour
     
     // originally I wanted to spawn the UI in front of camera, but wasn't working
     // may come back to this
-    [SerializeField]
-    OVRCameraRig ovrCameraRig;
+    //[SerializeField]
+    //OVRCameraRig ovrCameraRig;
     
     // close button on UI
     [SerializeField]
@@ -29,6 +30,8 @@ public class ArtSelectionManager : MonoBehaviour
     // get float values for the thumbstick to control rotation
     float leftThumbstickHorizontal;
     float leftThumbstickVertical;
+    
+    private Quaternion relativeRotation;
     
     // Start is called before the first frame update
     void Start()
@@ -86,7 +89,6 @@ public class ArtSelectionManager : MonoBehaviour
         if (selectedObject != null && spawnedObject != null)
         {
             Vector3 position = spawnedObject.GetComponent<Collider>().bounds.center;
-            ovrCameraRig = GameObject.Find("OVRCameraRig").GetComponent<OVRCameraRig>();
             // if the thumbstick is being moved horizontally and the horizontal position is greater than the vertical position
             //if (leftThumbstickHorizontal != 0 && Mathf.Abs(leftThumbstickHorizontal) > Mathf.Abs(leftThumbstickVertical))
             if (OVRInput.Get(OVRInput.Button.PrimaryThumbstickLeft) || OVRInput.Get(OVRInput.Button.PrimaryThumbstickRight))
@@ -106,6 +108,34 @@ public class ArtSelectionManager : MonoBehaviour
                 //spawnedObject.transform.rotation *= Quaternion.Euler(-angle * Time.deltaTime * 5, 0f, 0f);
                 spawnedObject.transform.RotateAround(position, spawnedObject.transform.right, -angle * Time.deltaTime * 5);
             }
+            
+            /*if (leftHand > 0.4)
+            {
+                Rigidbody rigidbody = spawnedObject.GetComponent<Rigidbody>();
+                float speed = rigidbody.angularVelocity.magnitude * Mathf.Rad2Deg;
+                //spawnedObject.transform.rotation *= Quaternion.Inverse(leftHandTransform.rotation);
+                if (Mathf.Abs(leftHandTransform.rotation.y) > Mathf.Abs(leftHandTransform.rotation.x))
+                    //spawnedObject.transform.RotateAround(position, spawnedObject.transform.up, -leftHandTransform.eulerAngles.y * Time.deltaTime * 0.5f);
+                {
+                    var q = Quaternion.AngleAxis(-leftHandTransform.eulerAngles.y, spawnedObject.transform.up);
+                    float angle;
+                    Vector3 axis;
+                    q.ToAngleAxis(out angle, out axis);
+                    rigidbody.angularVelocity = axis * angle * Mathf.Deg2Rad;
+                    //rigidbody.MoveRotation(rigidbody.rotation * Quaternion.Euler(spawnedObject.transform.up * -leftHandTransform.eulerAngles.y * Time.deltaTime * 0.5f));
+                }
+                else if (Mathf.Abs(leftHandTransform.rotation.x) > Mathf.Abs(leftHandTransform.rotation.y))
+                {
+                    var q = Quaternion.AngleAxis(-leftHandTransform.eulerAngles.x, spawnedObject.transform.right);
+                    float angle;
+                    Vector3 axis;
+                    q.ToAngleAxis(out angle, out axis);
+                    rigidbody.angularVelocity = axis * angle * Mathf.Deg2Rad;
+                }
+                    //rigidbody.MoveRotation(rigidbody.rotation * Quaternion.Euler(spawnedObject.transform.right * -leftHandTransform.eulerAngles.x * Time.deltaTime * 0.5f));
+                //spawnedObject.transform.RotateAround(position, spawnedObject.transform.right, -leftHandTransform.eulerAngles.x * Time.deltaTime * 0.5f);
+
+            }*/
         }
     }
     
@@ -148,11 +178,6 @@ public class ArtSelectionManager : MonoBehaviour
         //descriptionText.text = descriptionString;
         
         // spawn the same art piece game object
-        //ovrCameraRig = GameObject.Find("OVRCameraRig").GetComponent<OVRCameraRig>();
-        //var position = ovrCameraRig.centerEyeAnchor.position;
-        //spawnedObject = Instantiate(selectedObject, position + new Vector3(0,0,position.z * 1), selectedObject.transform.rotation);
-        
-        //Vector3 position = selectedObject.transform.position + (selectedObject.transform.forward * selectedObject.GetComponent<Collider>().bounds.size.x * 2);
         Vector3 position = selectedObject.transform.position;
         //spawnedObject = Instantiate(selectedObject, position + (selectedObject.transform.forward * 8) + (selectedObject.transform.up * 3), selectedObject.transform.rotation);
         spawnedObject = Instantiate(selectedObject, position + (selectedObject.transform.forward * 9) + (selectedObject.transform.up * -1), selectedObject.transform.rotation);

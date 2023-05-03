@@ -6113,6 +6113,7 @@ GameObject:
   - component: {fileID: 2002321737}
   - component: {fileID: 2002321739}
   - component: {fileID: 2002321740}
+  - component: {fileID: 2002321741}
   m_Layer: 8
   m_Name: Wakizashi2
   m_TagString: Art
@@ -6209,6 +6210,22 @@ MonoBehaviour:
   artName: 
   artistYear: 
   description: 
+--- !u!54 &2002321741
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002321735}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2022500055
 GameObject:
   m_ObjectHideFlags: 0
@@ -7373,7 +7390,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3186944276890303761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 13.6}
+  m_LocalPosition: {x: 0, y: 0, z: 19.4}
   m_LocalScale: {x: 4.9999995, y: 8, z: 4.9999995}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7625,6 +7642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycastCanvas: {fileID: 0}
+  leftHandTransform: {fileID: 135741950}
   ovrCameraRig: {fileID: 1466184169}
   close: {fileID: 3186944277635084720}
 --- !u!4 &3186944277558192415
