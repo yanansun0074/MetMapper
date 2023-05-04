@@ -964,6 +964,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2MarbleHeadofaHerm
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f0b44e419db640b4e9aa6103c8562ac8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: f0b44e419db640b4e9aa6103c8562ac8,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1325,6 +1330,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 5MarbleHeadofaYouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8ef7a5741aeb3784bb2849a6ebe0c135,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ef7a5741aeb3784bb2849a6ebe0c135, type: 3}
@@ -2460,6 +2470,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 10MarbleStatueofEirene
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b18c56fda76ccdc4390bc0e553046196,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b18c56fda76ccdc4390bc0e553046196, type: 3}
 --- !u!1001 &416122046
@@ -3591,6 +3606,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 4Display
       objectReference: {fileID: 0}
+    - target: {fileID: 1359637455009700663, guid: b1344added5825146ac6f956a0f0d5f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1344added5825146ac6f956a0f0d5f1, type: 3}
 --- !u!4 &823999493 stripped
@@ -3784,6 +3804,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 1MarbleHeadofaYouth
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 93931353543e25f47a8fa88d9ba1d9d1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 93931353543e25f47a8fa88d9ba1d9d1,
         type: 3}
@@ -4402,6 +4427,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 5Display
       objectReference: {fileID: 0}
+    - target: {fileID: 1359637455009700663, guid: b1344added5825146ac6f956a0f0d5f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1344added5825146ac6f956a0f0d5f1, type: 3}
 --- !u!43 &1015162129
@@ -4911,6 +4941,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 2Display
       objectReference: {fileID: 0}
+    - target: {fileID: 1359637455009700663, guid: b1344added5825146ac6f956a0f0d5f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1344added5825146ac6f956a0f0d5f1, type: 3}
 --- !u!4 &1118430404 stripped
@@ -5133,6 +5168,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 1Display
       objectReference: {fileID: 0}
+    - target: {fileID: 1359637455009700663, guid: b1344added5825146ac6f956a0f0d5f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1344added5825146ac6f956a0f0d5f1, type: 3}
 --- !u!1001 &1242426320
@@ -5206,6 +5246,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 6Display
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359637455009700663, guid: b1344added5825146ac6f956a0f0d5f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1344added5825146ac6f956a0f0d5f1, type: 3}
@@ -6315,6 +6360,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 7MarbleSphinxonaCavettoCapital
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 76cf27c0a2add2a459cf51fa64983bbf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76cf27c0a2add2a459cf51fa64983bbf, type: 3}
 --- !u!1 &1663674165
@@ -7110,6 +7160,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 10Display
       objectReference: {fileID: 0}
+    - target: {fileID: 2623036384987304723, guid: e54fc92d5c600814b8a0abf83d46b28b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2623036384987304735, guid: e54fc92d5c600814b8a0abf83d46b28b,
         type: 3}
       propertyPath: m_RootOrder
@@ -7582,6 +7637,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 6MarbleHeadofanAthlete
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c91411ddc8eeae548987ea2d7c56c0f0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c91411ddc8eeae548987ea2d7c56c0f0, type: 3}
 --- !u!4 &2037120191 stripped
@@ -7893,6 +7953,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 4MarbleHeadofaGoddess
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 85b86114354bc16468381714dc87da7e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85b86114354bc16468381714dc87da7e, type: 3}
 --- !u!1 &2146204474
@@ -8162,6 +8227,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: 7Display
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641238473821807450, guid: 274821d385c56474e9b9cbe216192a3a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6641238473821807454, guid: 274821d385c56474e9b9cbe216192a3a,
         type: 3}
