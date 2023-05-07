@@ -201,6 +201,8 @@ public class ArtSelectionManager : MonoBehaviour
         //spawnedObject = Instantiate(selectedObject, position + (selectedObject.transform.forward * 8) + (selectedObject.transform.up * 3), selectedObject.transform.rotation);
         spawnedObject = Instantiate(selectedObject, position + (raycastCanvas.transform.forward * -3) + (selectedObject.transform.up * -1), Quaternion.Inverse(raycastCanvas.transform.rotation));
         
+        spawnedObject.transform.rotation = Quaternion.LookRotation(lookDirection * -1, Vector3.up);
+        
         // move the spawned object down by 2 units
         // might need to change this so that it is moved relative to the floor
         // so that it works well for all artpieces
