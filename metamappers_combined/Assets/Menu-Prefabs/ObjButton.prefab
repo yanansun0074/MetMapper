@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: 7012177118104448039}
   - component: {fileID: 7012177118104448056}
   - component: {fileID: 7012177118104448057}
+  - component: {fileID: 6077208611619016348}
   m_Layer: 5
   m_Name: ObjButton
   m_TagString: Untagged
@@ -259,7 +260,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7012177118104448039}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6077208611619016348}
+        m_TargetAssemblyTypeName: ObjectFinding, Assembly-CSharp
+        m_MethodName: AddTarget
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7012177118104448057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,3 +286,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ControlPath: <Keyboard>/OEM1
+--- !u!114 &6077208611619016348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7012177118104448059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48b95a4b606943829c55efe9fbf5be0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
