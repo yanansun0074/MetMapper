@@ -20,8 +20,8 @@ public class ArtSelectionManager : MonoBehaviour
     
     // originally I wanted to spawn the UI in front of camera, but wasn't working
     // may come back to this
-    //[SerializeField]
-    //OVRCameraRig ovrCameraRig;
+    GameObject centerEye;
+    Vector3 headsetPos;
     
     // close button on UI
     [SerializeField]
@@ -173,24 +173,38 @@ public class ArtSelectionManager : MonoBehaviour
         artistYearText.text = art.GetArtistYear();
         descriptionText.text = art.GetDescription();
         
-        //nameText.text = nameString;
-        //artistYearText.text = artistYearString;
-        //descriptionText.text = descriptionString;
+        /*Quaternion rotation = Quaternion.LookRotation(selectedObject.transform.forward * -1, Vector3.up);
+        raycastCanvas.transform.rotation = rotation;
+        raycastCanvas.transform.position = position + selectedObject.transform.up * 2;
+        raycastCanvas.transform.Translate(Vector3.forward * -5f);*/
+        
+        centerEye = GameObject.Find("CenterEyeAnchor");
+        headsetPos = centerEye.transform.position;
+        raycastCanvas.transform.position = selectedObject.transform.position;
+        raycastCanvas.transform.position += selectedObject.transform.up * 2;
+                
+        //raycastCanvas.transform.LookAt(centerEye.transform);
+        Vector3 lookDirection = centerEye.transform.forward;
+        lookDirection.y = 0;
+        /*raycastCanvas.transform.rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
+        raycastCanvas.transform.rotation = Quaternion.Inverse(raycastCanvas.transform.rotation);
+        
+        raycastCanvas.transform.Translate(Vector3.forward * 10f);*/
+        
+        raycastCanvas.transform.rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
+        //raycastCanvas.transform.rotation = Quaternion.Inverse(raycastCanvas.transform.rotation);
+        
+        raycastCanvas.transform.Translate(Vector3.forward * -2f);
         
         // spawn the same art piece game object
-        Vector3 position = selectedObject.transform.position;
+        Vector3 position = raycastCanvas.transform.position;
         //spawnedObject = Instantiate(selectedObject, position + (selectedObject.transform.forward * 8) + (selectedObject.transform.up * 3), selectedObject.transform.rotation);
-        spawnedObject = Instantiate(selectedObject, position + (selectedObject.transform.forward * 9) + (selectedObject.transform.up * -1), selectedObject.transform.rotation);
+        spawnedObject = Instantiate(selectedObject, position + (raycastCanvas.transform.forward * -3) + (selectedObject.transform.up * -1), Quaternion.Inverse(raycastCanvas.transform.rotation));
         
         // move the spawned object down by 2 units
         // might need to change this so that it is moved relative to the floor
         // so that it works well for all artpieces
-        spawnedObject.transform.position += spawnedObject.transform.right * 1;
-        
-        Quaternion rotation = Quaternion.LookRotation(selectedObject.transform.forward * -1, Vector3.up);
-        raycastCanvas.transform.rotation = rotation;
-        raycastCanvas.transform.position = position + selectedObject.transform.up * 2;
-        raycastCanvas.transform.Translate(Vector3.forward * -5f);
+        spawnedObject.transform.position += spawnedObject.transform.right * 4;
         
         // scale the object down so that the user can see it easily
         spawnedObject.transform.localScale = new Vector3(selectedObject.transform.localScale.x * 1.05f, selectedObject.transform.localScale.y * 1.05f, selectedObject.transform.localScale.z * 1.05f);
