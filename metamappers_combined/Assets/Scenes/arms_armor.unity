@@ -621,9 +621,8 @@ GameObject:
   - component: {fileID: 92325099}
   - component: {fileID: 92325102}
   - component: {fileID: 92325101}
-  - component: {fileID: 92325103}
   - component: {fileID: 92325104}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Morgenstern
   m_TagString: Art
   m_Icon: {fileID: 0}
@@ -642,7 +641,7 @@ GameObject:
   - component: {fileID: 86141739}
   - component: {fileID: 87239147}
   - component: {fileID: 87239148}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -661,7 +660,7 @@ GameObject:
   - component: {fileID: 86141737}
   - component: {fileID: 87239145}
   - component: {fileID: 87239146}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -906,21 +905,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &92325103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 85047081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59a747a80bc69504fbc5dc7e11c5f4b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  artName: 
-  artistYear: 
-  description: 
 --- !u!65 &92325104
 BoxCollider:
   m_ObjectHideFlags: 0
