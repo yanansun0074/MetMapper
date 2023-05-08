@@ -190,12 +190,12 @@ public class ArtSelectionManager : MonoBehaviour
         raycastCanvas.transform.rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
         raycastCanvas.transform.Translate(Vector3.forward * -2f);*/
         
-        raycastCanvas.transform.position = new Vector3(canvasSpawn.transform.position.x, canvasSpawn.transform.position.y + 0.2f, canvasSpawn.transform.position.z);
+        Vector3 position = new Vector3(canvasSpawn.transform.position.x, canvasSpawn.transform.position.y + 0.2f, canvasSpawn.transform.position.z);
+        raycastCanvas.transform.position = position;
         raycastCanvas.transform.rotation = canvasSpawn.transform.rotation;
         raycastCanvas.transform.position += selectedObject.transform.up * 4;
         
         // spawn the same art piece game object
-        Vector3 position = raycastCanvas.transform.position;
         //spawnedObject = Instantiate(selectedObject, position + (selectedObject.transform.forward * 8) + (selectedObject.transform.up * 3), selectedObject.transform.rotation);
         spawnedObject = Instantiate(selectedObject, position + (raycastCanvas.transform.forward * -3) + (selectedObject.transform.up * -1), Quaternion.Inverse(raycastCanvas.transform.rotation));
         
@@ -206,7 +206,8 @@ public class ArtSelectionManager : MonoBehaviour
         // might need to change this so that it is moved relative to the floor
         // so that it works well for all artpieces
         spawnedObject.transform.position += spawnedObject.transform.right * 4;
-        
+        spawnedObject.transform.position += spawnedObject.transform.up * 4;
+
         // scale the object down so that the user can see it easily
         spawnedObject.transform.localScale = new Vector3(selectedObject.transform.localScale.x * 1.05f, selectedObject.transform.localScale.y * 1.05f, selectedObject.transform.localScale.z * 1.05f);
     }

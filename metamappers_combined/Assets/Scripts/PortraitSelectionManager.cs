@@ -136,6 +136,7 @@ public class PortraitSelectionManager : MonoBehaviour
         }
     }
     
+    
     // when close button is clicked on UI
     void CloseUI()
     {
