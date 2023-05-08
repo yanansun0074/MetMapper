@@ -27,6 +27,9 @@ public class ArtSelectionManager : MonoBehaviour
     [SerializeField]
     Button close;
     
+    [SerializeField]
+    public GameObject canvasSpawn;
+    
     // get float values for the thumbstick to control rotation
     float leftThumbstickHorizontal;
     float leftThumbstickVertical;
@@ -173,28 +176,23 @@ public class ArtSelectionManager : MonoBehaviour
         artistYearText.text = art.GetArtistYear();
         descriptionText.text = art.GetDescription();
         
-        /*Quaternion rotation = Quaternion.LookRotation(selectedObject.transform.forward * -1, Vector3.up);
-        raycastCanvas.transform.rotation = rotation;
-        raycastCanvas.transform.position = position + selectedObject.transform.up * 2;
-        raycastCanvas.transform.Translate(Vector3.forward * -5f);*/
-        
         centerEye = GameObject.Find("CenterEyeAnchor");
         headsetPos = centerEye.transform.position;
-        raycastCanvas.transform.position = selectedObject.transform.position;
+        
+        Vector3 lookDirection = centerEye.transform.forward;
+        /*raycastCanvas.transform.position = selectedObject.transform.position;
         raycastCanvas.transform.position += selectedObject.transform.up * 2;
                 
         //raycastCanvas.transform.LookAt(centerEye.transform);
         Vector3 lookDirection = centerEye.transform.forward;
         lookDirection.y = 0;
-        /*raycastCanvas.transform.rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
-        raycastCanvas.transform.rotation = Quaternion.Inverse(raycastCanvas.transform.rotation);
-        
-        raycastCanvas.transform.Translate(Vector3.forward * 10f);*/
-        
+       
         raycastCanvas.transform.rotation = Quaternion.LookRotation(lookDirection, Vector3.up);
-        //raycastCanvas.transform.rotation = Quaternion.Inverse(raycastCanvas.transform.rotation);
+        raycastCanvas.transform.Translate(Vector3.forward * -2f);*/
         
-        raycastCanvas.transform.Translate(Vector3.forward * -2f);
+        raycastCanvas.transform.position = new Vector3(canvasSpawn.transform.position.x, canvasSpawn.transform.position.y + 0.2f, canvasSpawn.transform.position.z);
+        raycastCanvas.transform.rotation = canvasSpawn.transform.rotation;
+        raycastCanvas.transform.position += selectedObject.transform.up * 4;
         
         // spawn the same art piece game object
         Vector3 position = raycastCanvas.transform.position;
@@ -202,6 +200,7 @@ public class ArtSelectionManager : MonoBehaviour
         spawnedObject = Instantiate(selectedObject, position + (raycastCanvas.transform.forward * -3) + (selectedObject.transform.up * -1), Quaternion.Inverse(raycastCanvas.transform.rotation));
         
         spawnedObject.transform.rotation = Quaternion.LookRotation(lookDirection * -1, Vector3.up);
+        //spawnedObject.transform.rotation = Quaternion.Inverse(canvasSpawn.transform.rotation);
         
         // move the spawned object down by 2 units
         // might need to change this so that it is moved relative to the floor
