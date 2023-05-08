@@ -26,6 +26,9 @@ public class PortraitSelectionManager : MonoBehaviour
     [SerializeField]
     Button close;
     
+    [SerializeField]
+    public GameObject canvasSpawn;
+    
     // get float values for the thumbstick to control rotation
     float leftThumbstickHorizontal;
     float leftThumbstickVertical;
@@ -173,7 +176,13 @@ public class PortraitSelectionManager : MonoBehaviour
         //spawnedObject = Instantiate(selectedObject, position + new Vector3(0,0,position.z * 1), selectedObject.transform.rotation);
         
         //Vector3 position = selectedObject.transform.position + (selectedObject.transform.forward * selectedObject.GetComponent<Collider>().bounds.size.z);
-        Vector3 position = selectedObject.transform.position + (selectedObject.transform.forward * 7);
+        
+        Vector3 position = new Vector3(canvasSpawn.transform.position.x, canvasSpawn.transform.position.y + 0.2f, canvasSpawn.transform.position.z);
+        raycastCanvas.transform.position = position;
+        Quaternion rotation = Quaternion.LookRotation(selectedObject.transform.forward * -1, Vector3.up);
+        raycastCanvas.transform.rotation = rotation;
+        raycastCanvas.transform.position += selectedObject.transform.up * 4;
+        
         spawnedObject = Instantiate(selectedObject, position + (selectedObject.transform.up * 3), selectedObject.transform.rotation);
         
         // move the spawned object down by 2 units
@@ -181,9 +190,7 @@ public class PortraitSelectionManager : MonoBehaviour
         // so that it works well for all artpieces
         spawnedObject.transform.position += spawnedObject.transform.right * 4;
         
-        Quaternion rotation = Quaternion.LookRotation(selectedObject.transform.forward * -1, Vector3.up);
-        raycastCanvas.transform.rotation = rotation;
-        raycastCanvas.transform.position = position + selectedObject.transform.up * 2;
+
         //raycastCanvas.transform.Translate(Vector3.forward * -1f);
         
         // scale the object down so that the user can see it easily

@@ -1122,6 +1122,7 @@ MonoBehaviour:
   raycastCanvas: {fileID: 0}
   ovrCameraRig: {fileID: 5937283733283476537}
   close: {fileID: 1890639826}
+  canvasSpawn: {fileID: 1242469419}
 --- !u!114 &185890387
 MonoBehaviour:
   m_ObjectHideFlags: 0
