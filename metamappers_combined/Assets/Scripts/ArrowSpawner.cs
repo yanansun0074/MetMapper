@@ -11,7 +11,6 @@ public class ArrowSpawner : MonoBehaviour
     [SerializeField]
     private LineRenderer Path;
     public float PathHeightOffset;
-    public float SpawnHeightOffset;
     public float PathUpdateSpeed;
 
     private GameObject current_target;
@@ -36,30 +35,51 @@ public class ArrowSpawner : MonoBehaviour
     }
 
     void Update(){
+
         if (update)
         {
-            Path.SetPosition(0, Player.position + Vector3.up  * PathHeightOffset);
+            NextTarget();
         }
+        // current_target = GameObject.Find("Wakizashi4");
+        // Vector3 player_pos = new Vector3(Player.position.x, 0.1f, Player.position.z);
+        // Vector3 target_pos = new Vector3(current_target.transform.position.x, 0.1f, current_target.transform.position.z);
+        // Path.enabled = true;
+        // Vector3 direction = target_pos - player_pos;
+        
+        // Path.SetPosition(0, new Vector3(Player.position.x, 0.1f, Player.position.z) + Vector3.up  * PathHeightOffset);
+        // //Path.SetPosition(1, new Vector3(current_target.transform.position.x, 0.1f, current_target.transform.position.z) + Vector3.up  * PathHeightOffset);
+        // Path.SetPosition(1, direction * 0.1f + player_pos + Vector3.up * PathHeightOffset);
+        // DrawPathCoroutine = StartCoroutine(DrawPathToTarget());
     }
     public void NextTarget()
     {
-        Path.enabled = true;
         if (ObjFinder.targets.Count > 0)
         {
             Path.enabled = true;
             current_target = ObjFinder.targets[ObjFinder.targets.Count -1];
+            
+            
+            // Way1: Direct line between player & object
+            // Path.SetPosition(0, new Vector3(Player.position.x, 0.1f, Player.position.z) + Vector3.up  * PathHeightOffset);
+            // Path.SetPosition(1,new Vector3(current_target.transform.position.x, 0.1f, current_target.transform.position.z) + Vector3.up  * PathHeightOffset);
+
+            // Way2: Arrow pointing at the direction
+            Vector3 player_pos = new Vector3(Player.position.x, 0.1f, Player.position.z);
+            Vector3 target_pos = new Vector3(current_target.transform.position.x, 0.1f, current_target.transform.position.z);
+            Path.enabled = true;
+            Vector3 direction = target_pos - player_pos;
+            
+            Path.SetPosition(0, direction * 0.05f + player_pos + Vector3.up  * PathHeightOffset);
+            Path.SetPosition(1, direction * 0.12f + player_pos + Vector3.up * PathHeightOffset);
+
+            // Way3: NavMesh AI Finding
             // if (DrawPathCoroutine != null)
             // {
             //     StopCoroutine(DrawPathCoroutine);
             // }
             // DrawPathCoroutine = StartCoroutine(DrawPathToTarget());
-            // for (int i = 0; i < Path.positionCount; i++)
-            // {
-            //     Path.SetPosition(i, )
-            // }
 
-            Path.SetPosition(0, new Vector3(Player.position.x, 0.1f, Player.position.z) + Vector3.up  * PathHeightOffset);
-            Path.SetPosition(1,new Vector3(current_target.transform.position.x, 0.1f, current_target.transform.position.z) + Vector3.up  * PathHeightOffset);
+            // current_target = GameObject.Find("Landscape");
             update = true;
         }
 
@@ -70,10 +90,15 @@ public class ArrowSpawner : MonoBehaviour
         WaitForSeconds Wait = new WaitForSeconds(PathUpdateSpeed);
         NavMeshPath path = new NavMeshPath();
 
+        // current_target = GameObject.Find("Landscape");
+
+
         while (current_target != null)
         {
-            if (NavMesh.CalculatePath(Player.position, current_target.transform.position, NavMesh.AllAreas, path))
+            if (NavMesh.CalculatePath(new Vector3(Player.position.x, 0.3f, Player.position.z), new Vector3(current_target.transform.position.x, 0.3f, current_target.transform.position.z), NavMesh.AllAreas, path))
             {
+                current_target.SetActive(false);
+                Debug.Log(path.corners.Length);
                 Path.positionCount = path.corners.Length;
 
                 for (int i = 0; i < path.corners.Length; i++)

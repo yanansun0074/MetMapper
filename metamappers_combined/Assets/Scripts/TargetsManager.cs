@@ -9,37 +9,54 @@ public class TargetsManager : MonoBehaviour
     public List<GameObject> targets;
     private Color oldColor;
     ArrowSpawner arrowSpawner;
+    public GameObject arrow_prefab;
+    private GameObject arrow;
 
     // Start is called before the first frame update
     void Start()
     {
         targets = new List<GameObject>();
         arrowSpawner = GameObject.Find("ArrowSpawner").GetComponent<ArrowSpawner>();
+        // arrow.SetActive(false);
     }
 
     public void AddTarget(GameObject tar)
     {
         targets.Add(tar);
-        HighlightTarget();
+        // HighlightTarget();
+        ArrowHighlight();
     }
 
     public void RemoveTarget()
     {
         targets.RemoveAt(0);
     }
-    // Update is called once per frame
-    void Update()
-    {
 
-        
+    // Method 1: Arrow Indicator
+    void ArrowHighlight()
+    {
+    
+        if(targets[targets.Count-1] != null)
+        {
+
+            if (arrow != null)
+            {
+                Destroy(arrow);
+            }
+            Vector3 target_pos = targets[targets.Count-1].transform.position;
+            arrow = Instantiate(arrow_prefab, new Vector3(target_pos.x, 10f, target_pos.z), Quaternion.identity);
+            GeneratePath();
+        }
     }
 
+
+    // Method 2: Highlight in green
     public void HighlightTarget()
     {
         if (targets.Count >1)
         {
             RemoveHighlight(targets[targets.Count -2]);
-            RemovePath(targets[targets.Count -2]);
+            
         }
         if(targets[targets.Count-1] != null)
         {
@@ -57,15 +74,9 @@ public class TargetsManager : MonoBehaviour
     {
         if(old_obj != null)
         {
-            // old_obj.SetActive(true);
             Renderer r = old_obj.GetComponent(typeof(Renderer)) as Renderer;
             r.material.SetColor("_Color", oldColor);
         }
-    }
-
-    void RemovePath(GameObject obj)
-    {
-
     }
 
     void GeneratePath()
