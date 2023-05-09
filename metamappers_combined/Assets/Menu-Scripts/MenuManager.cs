@@ -48,15 +48,21 @@ public class MenuManager : MonoBehaviour
         {
             GameObject created_btn = (GameObject) Instantiate(selectable_button, selectables.transform);
             TextMeshProUGUI btn_txt = created_btn.GetComponentInChildren<TextMeshProUGUI>();
-            btn_txt.text = obj.name;
+
+            Information info = obj.GetComponent<Information>();
+            btn_txt.text = info.GetName();
         }
 
         foreach (GameObject obj in portraits)
         {
             GameObject created_btn = (GameObject) Instantiate(selectable_button, selectables.transform);
             TextMeshProUGUI btn_txt = created_btn.GetComponentInChildren<TextMeshProUGUI>();
-            btn_txt.text = obj.name;
+            
+            Information info = obj.GetComponent<Information>();
+            btn_txt.text = info.GetName();
         }
+
+        OpenDisplayMenu();
     }
 
     // Update is called once per frame
