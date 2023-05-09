@@ -39,8 +39,6 @@ public class ArtSelectionManagerGreek : MonoBehaviour
     float leftThumbstickVertical;
     
     private Quaternion relativeRotation;
-
-    private int rendered = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -57,20 +55,12 @@ public class ArtSelectionManagerGreek : MonoBehaviour
         // raycastCanvas.enabled = false;
         // raycastCanvas.GetComponent<Collider>().enabled = false;
 
-        canvas.SetActive(true);
-        LayoutRebuilder.ForceRebuildLayoutImmediate(canvas.GetComponent<RectTransform>());
-
+        canvas.SetActive(false);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (rendered == 0) {
-            LayoutRebuilder.ForceRebuildLayoutImmediate(canvas.GetComponent<RectTransform>());
-            canvas.SetActive(false);
-            rendered = 1;
-        }
-
         // get the input from left controller index trigger
         leftHand = OVRInput.Get(OVRInput.Axis1D.PrimaryIndexTrigger, OVRInput.Controller.LTouch);
                 
@@ -143,13 +133,18 @@ public class ArtSelectionManagerGreek : MonoBehaviour
     // coroutine to give time to detect laser
     IEnumerator showArtInfo()
     {
+
         yield return new WaitForSeconds(0.5f);
         
         // show canvas now
         // raycastCanvas.enabled = true;
         // raycastCanvas.GetComponent<Collider>().enabled = true;
         canvas.SetActive(true);
-        
+        yield return new WaitForSeconds(0.01f);
+        canvas.SetActive(false);
+        yield return new WaitForSeconds(0.01f);
+        canvas.SetActive(true);
+
         // grab hit info, which art piece is selected
         RaycastHit hit = CustomLaserPointer.instance.getHit();
         selectedObject = hit.transform.gameObject;
@@ -166,7 +161,7 @@ public class ArtSelectionManagerGreek : MonoBehaviour
         canvas.transform.rotation = canvasSpawn.transform.rotation;
 
         spawnedObject = Instantiate(selectedObject, selectableSpawn.transform);
-        spawnedObject.transform.RotateAround(canvasSpawn.transform.position, canvasSpawn.transform.up, 180f);
+        spawnedObject.transform.position = selectableSpawn.transform.position;
 
     }
 }
