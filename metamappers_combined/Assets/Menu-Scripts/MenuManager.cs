@@ -35,31 +35,42 @@ public class MenuManager : MonoBehaviour
 
     public GameObject arrowSpawner;
 
+    private int rendered = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        CloseAll();
 
         GameObject[] art = GameObject.FindGameObjectsWithTag("Art");
         GameObject[] portraits = GameObject.FindGameObjectsWithTag("Portrait");
 
         foreach (GameObject obj in art)
         {
-            GameObject created_btn = (GameObject) Instantiate(selectable_button, selectables.transform);
-            TextMeshProUGUI btn_txt = created_btn.GetComponentInChildren<TextMeshProUGUI>();
+            if (obj.layer == 8) {
+                GameObject created_btn = (GameObject) Instantiate(selectable_button, selectables.transform);
+                TextMeshProUGUI btn_txt = created_btn.GetComponentInChildren<TextMeshProUGUI>();
 
-            Information info = obj.GetComponent<Information>();
-            btn_txt.text = info.GetName();
+                Information info = obj.GetComponent<Information>();
+                btn_txt.text = info.GetName();
+
+                ObjButton addedInstance = created_btn.AddComponent<ObjButton>();
+                addedInstance.artwork = obj;
+            }
         }
 
         foreach (GameObject obj in portraits)
         {
-            GameObject created_btn = (GameObject) Instantiate(selectable_button, selectables.transform);
-            TextMeshProUGUI btn_txt = created_btn.GetComponentInChildren<TextMeshProUGUI>();
-            
-            Information info = obj.GetComponent<Information>();
-            btn_txt.text = info.GetName();
+            if (obj.layer == 8) {
+                GameObject created_btn = (GameObject) Instantiate(selectable_button, selectables.transform);
+                TextMeshProUGUI btn_txt = created_btn.GetComponentInChildren<TextMeshProUGUI>();
+                
+                Information info = obj.GetComponent<Information>();
+                btn_txt.text = info.GetName();
+
+                ObjButton addedInstance = created_btn.AddComponent<ObjButton>();
+                addedInstance.artwork = obj;
+            }
         }
 
         OpenDisplayMenu();
@@ -68,6 +79,14 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (rendered == 0) {
+            rendered = 1;
+        } else if (rendered == 1) {
+            CloseAll();
+
+            rendered = 2;
+        }
+
         if (playerInput.actions["ToggleMenu"].triggered) {
             if (!main.activeSelf && !menus.activeSelf) {
                 OpenMainMenu();

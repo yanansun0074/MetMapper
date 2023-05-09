@@ -22,14 +22,10 @@ public class ObjectFinding : MonoBehaviour
     }
 
     public void AddTarget()
-    {
-        string obj_name = this.GetComponentInChildren<TextMeshProUGUI>().text;
-    
-        GameObject target = GameObject.Find(obj_name);
-        
-        ObjFinder.AddTarget(target);
-        
-        
+    {    
+        GameObject target = this.GetComponent<ObjButton>().artwork;
+
+        ObjFinder.AddTarget(target);     
 
         
     }
