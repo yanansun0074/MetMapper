@@ -166,7 +166,8 @@ public class ArtSelectionManagerGreek : MonoBehaviour
         canvas.transform.rotation = canvasSpawn.transform.rotation;
 
         spawnedObject = Instantiate(selectedObject, selectableSpawn.transform);
-        spawnedObject.transform.rotation = Quaternion.Inverse(canvas.transform.rotation);
+        spawnedObject.transform.RotateAround(canvasSpawn.transform.position, canvasSpawn.transform.up, 180f);
+
     }
 }
 
