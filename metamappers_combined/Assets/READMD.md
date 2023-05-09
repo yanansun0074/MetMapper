@@ -9,7 +9,6 @@ Platforms: Unity 2021.3.17f1, Windows and IOS, Quest 2
 Assets/Scenes -> contains the four scenes
 Assets/Scripts -> Contains scripts for functionality used across all scenes
 
-
 ### Video URL
 https://www.youtube.com/watch?v=jUBhmyPY8ZE
 
@@ -17,7 +16,6 @@ https://www.youtube.com/watch?v=jUBhmyPY8ZE
 Depending on where you are standing, the canvas with the art information may go through the wall and cut off the information. In this case, you would need to close the canvas and change your position. 
 
 ### Asset Sources
-
 
 **Arms and Armor**:
 
@@ -45,3 +43,14 @@ https://assetstore.unity.com/packages/3d/props/weapons/katana-sword-free-143768
 https://assetstore.unity.com/packages/3d/props/weapons/wakizashi-short-sword-144679
 https://assetstore.unity.com/packages/3d/props/weapons/free-katana-and-scabbard-67185
 https://assetstore.unity.com/packages/3d/props/weapons/katana-vagabond-229627
+
+
+**Greek Sculptures**:
+
+https://www.myminifactory.com/object/3d-print-athlete-torso-at-the-louvre-paris-17097
+https://www.myminifactory.com/object/3d-print-marble-statue-of-a-woman-no-head-1-36616
+https://www.myminifactory.com/object/3d-print-marble-statue-of-a-woman-with-head-36617
+https://www.myminifactory.com/object/3d-print-marble-torso-of-a-youth-36604
+https://www.myminifactory.com/object/3d-print-marble-torso-of-the-so-called-apollo-lykeios-38486
+https://www.myminifactory.com/object/3d-print-upper-part-of-a-marble-statue-of-a-woman-36614
+https://www.myminifactory.com/object/3d-print-wounded-amazon-66451

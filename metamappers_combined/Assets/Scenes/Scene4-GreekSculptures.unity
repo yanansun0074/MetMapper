@@ -295,6 +295,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: arms_armor
       objectReference: {fileID: 0}
+    - target: {fileID: 5690455216002184409, guid: c332356dc82db4a8585b78d9bc6e12f6,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5690455216002184410, guid: c332356dc82db4a8585b78d9bc6e12f6,
         type: 3}
       propertyPath: m_Pivot.x
@@ -419,6 +424,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ChangeScene Canvas0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690455216002184415, guid: c332356dc82db4a8585b78d9bc6e12f6,
+        type: 3}
+      propertyPath: sortOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5690455216528342809, guid: c332356dc82db4a8585b78d9bc6e12f6,
         type: 3}
@@ -1036,7 +1046,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 525.55, y: 0}
   m_SizeDelta: {x: 351.1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &138063078
@@ -2882,6 +2892,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChangeScene Canvas1
       objectReference: {fileID: 0}
+    - target: {fileID: 7714079909813368878, guid: 745aa2f53cea64dd7b32c013b7965f1a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7714079909813368879, guid: 745aa2f53cea64dd7b32c013b7965f1a,
         type: 3}
       propertyPath: m_Pivot.x
@@ -4079,7 +4094,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 350, y: 0}
   m_SizeDelta: {x: 700, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1113818475
@@ -5933,7 +5948,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 349.45, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1668646354
