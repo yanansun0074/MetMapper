@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1706.6667
     height: 1024
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 371}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 38
+  controlID: 28
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 320.66666
     height: 577.3333
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 39
+  controlID: 29
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 40
+  controlID: 30
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -267,8 +267,8 @@ MonoBehaviour:
     y: 0
     width: 981.3334
     height: 577.3333
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -317,22 +317,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 57
   m_LastFolders:
-  - Assets/Scripts
+  - Assets
   m_LastFoldersGridSize: 57
   m_LastProjectPath: C:\Users\sarah\OneDrive\Pictures\Documents\GitHub\MetMappers\MetMapper\metamappers_combined
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 64.33331}
-    m_SelectedIDs: 167e0000
-    m_LastClickedID: 32278
-    m_ExpandedIDs: 00000000d07d000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: d67d0000
+    m_LastClickedID: 32214
+    m_ExpandedIDs: 00000000d87d0000da7d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -360,7 +360,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d07d0000
+    m_ExpandedIDs: 00000000d67d0000d87d0000da7d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000ceb10000365901000a730000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -490,9 +490,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 72810200
-      m_LastClickedID: 164210
-      m_ExpandedIDs: 72a6feffc4a6feff94b0feff64b4feff6abbfeff3ec0feffbac4feffc2c8feff7eccfeff5cd3feff20d8fefff6dcfeff48ddfeff18e7feffe8eafeffeef1feffc2f6feff42fbfeff4efffeff0e03fffff009ffffb80effff8616ffffd816ffffa820ffff7824ffff7e2bffff5230ffffce34ffffd638ffff923cffff7043ffff3448ffffa24dfffff44dffffc457ffff945bffff9a62ffff6e67ffffee6bfffffa6fffffba73ffff9c7affff607fffffb485ffff0686ffffde8fffffb693ffffc49affffa09fffff28a4ffff38a8fffffcabffffe2b2ffffaeb7ffff9cc0fffff0c0ffffc0caffff90ceffff0ad6ffffbadbffff3ce0ffff48e4ffff08e8ffffeaeeffffb2f3ffff18faffff0c7200000873000028730000707300009a73000096a00100b8a0010046a3010094a3010032a40100bca40100f8a4010066d1010064d4010002d501008cd50100c8d501001a280200702a0200182b0200b62b0200402c02007c2c02006e2d0200ea7e0200f2810200908202001a83020056830200
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 18faffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -824,13 +824,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.020663692, y: 0.16837633, z: -0.003784891, w: -0.9858333}
+    m_Target: {x: -0.014437526, y: -0.9829104, z: 0.084196955, w: -0.16512103}
     speed: 2
-    m_Value: {x: -0.020668143, y: 0.16536358, z: -0.0037216565, w: -0.98600906}
+    m_Value: {x: -0.014432652, y: -0.9825786, z: 0.08416853, w: -0.16506529}
   m_Size:
-    m_Target: 2.1825929
+    m_Target: 15.784287
     speed: 2
-    m_Value: 2.0886056
+    m_Value: 15.784287
   m_Ortho:
     m_Target: 1
     speed: 2

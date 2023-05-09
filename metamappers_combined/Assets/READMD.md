@@ -58,7 +58,7 @@ https://www.myminifactory.com/object/3d-print-marble-torso-of-the-so-called-apol
 https://www.myminifactory.com/object/3d-print-upper-part-of-a-marble-statue-of-a-woman-36614
 https://www.myminifactory.com/object/3d-print-wounded-amazon-66451
 
-**Greek Sculptures**:
+**MingQing Dynasty**:
 
 https://maps.metmuseum.org/?screenmode=base&floor=2&search=chinese%20painting&feature=LTczLjk2MjczMjAsNDAuNzc5MTM0OUBwaW5AMzI5NDM5MTM5MDQ0#hash=17.86/40.779135/-73.962732/-61
 https://www.metmuseum.org/art/collection/search/39628?&exhibitionId=0&oid=39628&pkgids=undefined
