@@ -11,6 +11,7 @@ Assets/Scripts -> Contains scripts for functionality used across all scenes
 
 
 ### Video URL
+https://www.youtube.com/watch?v=jUBhmyPY8ZE
 
 ### Missing / Bugged Features
 Depending on where you are standing, the canvas with the art information may go through the wall and cut off the information. In this case, you would need to close the canvas and change your position. 
