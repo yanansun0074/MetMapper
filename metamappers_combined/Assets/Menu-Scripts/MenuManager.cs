@@ -33,6 +33,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField]
     public GameObject selectable_button;
 
+    public GameObject arrowSpawner;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -109,6 +111,7 @@ public class MenuManager : MonoBehaviour
         main.SetActive(true);
         map.SetActive(false);
         ondisplay.SetActive(false);
+        arrowSpawner.GetComponent<ArrowSpawner>().closed = false;
     }
 
     void OpenDisplayMenu() {
@@ -137,5 +140,6 @@ public class MenuManager : MonoBehaviour
         main.SetActive(false);
         map.SetActive(false);
         ondisplay.SetActive(false);
+        arrowSpawner.GetComponent<ArrowSpawner>().closed = true;
     }
 }

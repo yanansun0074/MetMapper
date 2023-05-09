@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1733195, g: 0.21664315, b: 0.29869828, a: 1}
+  m_IndirectSpecularColor: {r: 0.17341214, g: 0.21677372, b: 0.29884726, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3374,7 +3374,7 @@ Transform:
   - {fileID: 185890385}
   - {fileID: 694032493}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &692707505
 GameObject:
@@ -5046,6 +5046,11 @@ PrefabInstance:
       propertyPath: menuspawn
       value: 
       objectReference: {fileID: 2603216145592824869}
+    - target: {fileID: 2815081378563069147, guid: f45782b366a0dfc4ea3abf48b375a790,
+        type: 3}
+      propertyPath: arrowSpawner
+      value: 
+      objectReference: {fileID: 1658116339}
     - target: {fileID: 6523231351864611952, guid: f45782b366a0dfc4ea3abf48b375a790,
         type: 3}
       propertyPath: pointer
@@ -8040,7 +8045,7 @@ PrefabInstance:
     - target: {fileID: 1090674982196761062, guid: 0ee6d126fb1664dd6966e820c72948ec,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1090674982196761062, guid: 0ee6d126fb1664dd6966e820c72948ec,
         type: 3}
@@ -8115,6 +8120,12 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee6d126fb1664dd6966e820c72948ec, type: 3}
+--- !u!1 &1658116339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1090674981814083160, guid: 0ee6d126fb1664dd6966e820c72948ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 1658116338}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1700261266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9180,7 +9191,7 @@ GameObject:
   - component: {fileID: 3469287837870544785}
   m_Layer: 8
   m_Name: Barabuta Helmet
-  m_TagString: Art
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12439,7 +12450,7 @@ GameObject:
   - component: {fileID: 9003247431054245610}
   m_Layer: 8
   m_Name: Halberd
-  m_TagString: Art
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -312,7 +312,7 @@ Transform:
   - {fileID: 238998386}
   - {fileID: 1004149037}
   m_Father: {fileID: 0}
-  m_RootOrder: 40
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &54663099
 GameObject:
@@ -3601,7 +3601,6 @@ MonoBehaviour:
   raycastCanvas: {fileID: 0}
   ovrCameraRig: {fileID: 1466184169}
   close: {fileID: 3186944277635084720}
-  warningCanvas: {fileID: 307171979}
   canvasSpawn: {fileID: 843997}
 --- !u!1001 &795734510
 PrefabInstance:
@@ -4567,7 +4566,7 @@ RectTransform:
   m_Children:
   - {fileID: 615572856}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5442,6 +5441,11 @@ PrefabInstance:
       propertyPath: menuspawn
       value: 
       objectReference: {fileID: 247400096}
+    - target: {fileID: 2815081378563069147, guid: f45782b366a0dfc4ea3abf48b375a790,
+        type: 3}
+      propertyPath: arrowSpawner
+      value: 
+      objectReference: {fileID: 1644377379}
     - target: {fileID: 6523231351864611952, guid: f45782b366a0dfc4ea3abf48b375a790,
         type: 3}
       propertyPath: pointer
@@ -7043,6 +7047,12 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ee6d126fb1664dd6966e820c72948ec, type: 3}
+--- !u!1 &1644377379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1090674981814083160, guid: 0ee6d126fb1664dd6966e820c72948ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 1644377378}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1651029691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8369,7 +8379,7 @@ RectTransform:
   m_Children:
   - {fileID: 133800734}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9922,7 +9932,6 @@ MonoBehaviour:
   raycastCanvas: {fileID: 0}
   leftHandTransform: {fileID: 135741950}
   close: {fileID: 3186944277635084720}
-  warningCanvas: {fileID: 307171979}
   canvasSpawn: {fileID: 843997}
 --- !u!4 &3186944277558192415
 Transform:

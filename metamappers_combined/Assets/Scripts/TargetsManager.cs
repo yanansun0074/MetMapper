@@ -48,6 +48,11 @@ public class TargetsManager : MonoBehaviour
             GeneratePath();
         }
     }
+    
+    public void RemoveArrow()
+    {
+        arrow.SetActive(false);
+    }
 
 
     // Method 2: Highlight in green
@@ -81,6 +86,7 @@ public class TargetsManager : MonoBehaviour
 
     void GeneratePath()
     {
+        // arrowSpawner.closed = false;
         arrowSpawner.NextTarget();
     }
 }

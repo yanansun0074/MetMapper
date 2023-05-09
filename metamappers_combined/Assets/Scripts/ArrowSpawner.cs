@@ -16,7 +16,8 @@ public class ArrowSpawner : MonoBehaviour
     private GameObject current_target;
     private NavMeshTriangulation Triangulation;
     private Coroutine DrawPathCoroutine;
-    private bool update;
+    bool update;
+    public bool closed;
 
     private void Awake()
     {
@@ -30,15 +31,22 @@ public class ArrowSpawner : MonoBehaviour
         ObjFinder = GameObject.Find("TargetManager").GetComponent<TargetsManager>();
         // NextTarget();
         Path.enabled = false;
+        closed = false; 
         
 
     }
 
     void Update(){
 
-        if (update)
+        if (update == true && closed == false)
         {
             NextTarget();
+        }
+        else
+        {
+            Path.enabled = false;
+            ObjFinder.RemoveArrow();
+
         }
         // current_target = GameObject.Find("Wakizashi4");
         // Vector3 player_pos = new Vector3(Player.position.x, 0.1f, Player.position.z);
